@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Graphics & Logos | Dayln Van Laanen</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="site-title"><a href="index.html">DAYLN VAN LAANEN</a></div>
+        <div class="site-subtitle">UNIVERSITY PROGRAMS MANAGER</div>
+    </header>
+    <main class="page-container">
+        <div class="project-detail-header">
+            <a href="projects.html" class="back-link">&larr; Back to Projects</a>
+            <h1>Graphics & Logos</h1>
+            <p class="project-role">Graphic Design</p>
+        </div>
+        <div class="project-content">
+            <img src="placeholder-project-main.jpg" alt="Graphics & Logos Main Image" class="hero-image">
+            <div class="text-block">
+                <p>Uncategorized graphics, logos, and various digital content with no specific connection to anything related to my previous work samples.</p>
+            </div>
+            <div class="project-gallery">
+                <img src="placeholder-project-1.jpg" alt="Project detail 1">
+                <img src="placeholder-project-2.jpg" alt="Project detail 2">
+            </div>
+        </div>
+    </main>
+    <footer>
+        <div class="footer-left">&copy; 2022 by Dayln Van Laanen.</div>
+        <div class="footer-right">
+            <p>E-Mail: <a href="mailto:catchdayln@gmail.com">catchdayln@gmail.com</a></p>
+            <p>URL: <a href="https://catchdayln.github.io">catchdayln.github.io</a></p>
+        </div>
+    </footer>
+</body>
+</html>
