@@ -150,7 +150,7 @@ header a {
     text-align: justify;
 }
 
-/* Subpage General Styles (Resume & Projects) */
+/* Subpage General Styles */
 .page-container {
     max-width: 1100px;
     margin: 60px auto;
@@ -352,7 +352,6 @@ header a {
     height: auto;
     max-height: 500px;
     object-fit: cover;
-    border-radius: 5px;
     margin-bottom: 40px;
     background: #ddd;
 }
@@ -368,18 +367,99 @@ header a {
     font-size: 1.05rem;
 }
 
+/* Updated Gallery: Flushed grid with no white space */
 .project-gallery {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0;
     margin-bottom: 40px;
 }
 
 .project-gallery img {
     width: 100%;
-    height: auto;
-    border-radius: 5px;
+    height: 250px; 
+    object-fit: cover;
+    display: block;
     background: #ddd;
+    cursor: pointer;
+    transition: opacity 0.2s ease;
+}
+
+.project-gallery img:hover {
+    opacity: 0.8;
+}
+
+/* Lightbox Modal Styles */
+.lightbox {
+    display: none; 
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    align-items: center;
+    justify-content: center;
+}
+
+.lightbox-content-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 90%;
+    max-height: 90%;
+}
+
+#lightbox-img {
+    max-width: 100%;
+    max-height: 90vh;
+    box-shadow: 0 0 20px rgba(0,0,0,0.5);
+    object-fit: contain;
+}
+
+.close-lightbox {
+    position: absolute;
+    top: 20px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 10000;
+}
+
+.close-lightbox:hover,
+.close-lightbox:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.nav-arrow {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 3rem;
+    cursor: pointer;
+    padding: 0 20px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: color 0.2s ease;
+}
+
+.nav-arrow:hover {
+    color: #ccc;
+}
+
+.nav-arrow.prev {
+    left: -70px;
+}
+
+.nav-arrow.next {
+    right: -70px;
 }
 
 /* Footer */
@@ -439,5 +519,26 @@ footer a {
     
     .timeline-left {
         margin-bottom: 20px;
+    }
+    
+    /* Make gallery 2 columns on tablet, 1 on phone */
+    .project-gallery {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .nav-arrow {
+        position: static;
+        transform: none;
+        padding: 10px;
+    }
+    
+    .lightbox-content-wrapper {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 500px) {
+    .project-gallery {
+        grid-template-columns: 1fr;
     }
 }
