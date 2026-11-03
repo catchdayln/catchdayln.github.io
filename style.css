@@ -36,6 +36,7 @@ header a {
     color: #777;
 }
 
+/* Homepage specific */
 .container {
     display: flex;
     flex-wrap: wrap;
@@ -149,54 +150,13 @@ header a {
     text-align: justify;
 }
 
-footer {
-    padding: 40px 50px;
-    background: #fff;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-top: 1px solid #eaeaea;
-    font-size: 0.85rem;
-}
-
-footer a {
-    color: #333;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-/* Mobile Smoothing */
-@media (max-width: 800px) {
-    .container {
-        margin: 0;
-        box-shadow: none;
-    }
-    header, footer {
-        flex-direction: column;
-        text-align: center;
-        gap: 15px;
-    }
-    .right-column {
-        padding: 40px 30px;
-    }
-    .right-column h2 {
-        font-size: 3.5rem;
-    }
-    .action-buttons {
-        flex-direction: column;
-    }
-    .btn {
-        text-align: center;
-    }
-}
-/* Subpage Layout Styles */
+/* Subpage General Styles (Resume & Projects) */
 .page-container {
     max-width: 1100px;
     margin: 60px auto;
-    padding: 0 40px;
+    padding: 0 40px 60px;
     background: #fff;
     box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-    padding-bottom: 60px;
 }
 
 .page-header {
@@ -355,22 +315,7 @@ footer a {
     color: #fff;
 }
 
-/* Mobile Adjustments */
-@media (max-width: 800px) {
-    .page-container {
-        padding: 0 20px;
-        margin: 20px auto;
-    }
-    
-    .timeline-item {
-        flex-direction: column;
-    }
-    
-    .timeline-left {
-        margin-bottom: 20px;
-    }
-}
-/* Individual Project Page Styles */
+/* Individual Project Detail Pages */
 .project-detail-header {
     text-align: center;
     padding: 40px 0 30px;
@@ -435,4 +380,64 @@ footer a {
     height: auto;
     border-radius: 5px;
     background: #ddd;
+}
+
+/* Footer */
+footer {
+    padding: 40px 50px;
+    background: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid #eaeaea;
+    font-size: 0.85rem;
+}
+
+footer a {
+    color: #333;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Mobile Adjustments */
+@media (max-width: 800px) {
+    .container {
+        margin: 0;
+        box-shadow: none;
+    }
+    
+    header, footer {
+        flex-direction: column;
+        text-align: center;
+        gap: 15px;
+    }
+    
+    .right-column {
+        padding: 40px 30px;
+    }
+    
+    .right-column h2 {
+        font-size: 3.5rem;
+    }
+    
+    .action-buttons {
+        flex-direction: column;
+    }
+    
+    .btn {
+        text-align: center;
+    }
+
+    .page-container {
+        padding: 0 20px 40px;
+        margin: 20px auto;
+    }
+    
+    .timeline-item {
+        flex-direction: column;
+    }
+    
+    .timeline-left {
+        margin-bottom: 20px;
+    }
 }
