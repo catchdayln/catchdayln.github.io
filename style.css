@@ -409,4 +409,366 @@ body:not(.home-body) {
 }
 
 .job-type {
-    font
+    font-size: 0.9rem;
+    color: #888;
+}
+
+.timeline-right {
+    flex: 2;
+    min-width: 350px;
+}
+
+.timeline-right p {
+    margin-bottom: 20px;
+    color: #444;
+    text-align: justify;
+    font-size: 1.05rem;
+    line-height: 1.8;
+}
+
+.timeline-right .highlight {
+    font-style: italic;
+    font-size: 1rem;
+    color: #666;
+    margin-top: 25px;
+    padding-left: 20px;
+    border-left: 3px solid var(--wix-red);
+}
+
+
+/* =========================================
+   PROJECTS LIST (Spacious Row Layout)
+========================================= */
+.project-list {
+    display: flex;
+    flex-direction: column;
+    gap: 80px;
+}
+
+.project-row {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+    padding-bottom: 80px;
+    border-bottom: 1px solid #eaeaea;
+}
+
+.project-row:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.project-info {
+    flex: 1;
+    min-width: 300px;
+}
+
+.project-info h2 {
+    font-size: 2rem;
+    margin-bottom: 8px;
+    color: #000;
+}
+
+.project-role {
+    font-weight: bold;
+    font-size: 0.95rem;
+    letter-spacing: 1.5px;
+    color: var(--wix-red);
+    margin-bottom: 20px;
+}
+
+.project-info p {
+    font-size: 1.05rem;
+    color: #555;
+    margin-bottom: 35px;
+    line-height: 1.7;
+    text-align: justify;
+}
+
+.btn-small {
+    display: inline-block;
+    padding: 10px 25px;
+    border: 2px solid var(--wix-red);
+    background: transparent;
+    text-decoration: none;
+    color: var(--wix-red);
+    border-radius: 25px;
+    font-weight: bold;
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+}
+
+.btn-small:hover {
+    background: var(--wix-red);
+    color: #fff;
+}
+
+/* Auto-Play Carousel Styling */
+.project-media {
+    flex: 1.2;
+    min-width: 350px;
+    height: 400px;
+    position: relative;
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    background: #f0f0f0;
+}
+
+.carousel-track {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.slide.active {
+    opacity: 1;
+    z-index: 1;
+}
+
+/* Individual Project Detail Pages */
+.project-detail-header {
+    text-align: center;
+    padding: 50px 0 40px;
+    border-bottom: 1px solid #eaeaea;
+    margin-bottom: 50px;
+}
+
+.back-link {
+    display: inline-block;
+    margin-bottom: 25px;
+    text-decoration: none;
+    color: #777;
+    font-size: 1rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+    transition: color 0.3s ease;
+}
+
+.back-link:hover {
+    color: var(--wix-red);
+}
+
+.project-detail-header h1 {
+    font-size: 3.5rem;
+    margin-bottom: 10px;
+}
+
+.project-content {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.hero-image {
+    width: 100%;
+    height: auto;
+    max-height: 600px;
+    object-fit: cover;
+    margin-bottom: 50px;
+    background: #ddd;
+    border-radius: 5px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+.text-block {
+    margin-bottom: 50px;
+}
+
+.text-block p {
+    margin-bottom: 25px;
+    color: #333;
+    text-align: justify;
+    font-size: 1.15rem;
+    line-height: 1.8;
+}
+
+/* Gallery Grid */
+.project-gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0;
+    margin-bottom: 40px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.project-gallery img {
+    width: 100%;
+    height: 300px; 
+    object-fit: cover;
+    display: block;
+    background: #ddd;
+    cursor: pointer;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.project-gallery img:hover {
+    opacity: 0.85;
+    transform: scale(0.98);
+}
+
+/* Lightbox Modal */
+.lightbox {
+    display: none; 
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.95);
+    align-items: center;
+    justify-content: center;
+}
+
+.lightbox-content-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 90%;
+    max-height: 90%;
+}
+
+#lightbox-img {
+    max-width: 100%;
+    max-height: 90vh;
+    box-shadow: 0 0 20px rgba(0,0,0,0.8);
+    object-fit: contain;
+}
+
+.close-lightbox {
+    position: absolute;
+    top: 20px;
+    right: 40px;
+    color: #fff;
+    font-size: 45px;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 10000;
+    transition: color 0.3s ease;
+}
+
+.close-lightbox:hover {
+    color: var(--wix-red);
+}
+
+.nav-arrow {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 3.5rem;
+    cursor: pointer;
+    padding: 0 20px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: color 0.3s ease;
+}
+
+.nav-arrow:hover {
+    color: var(--wix-red);
+}
+
+.nav-arrow.prev {
+    left: -80px;
+}
+
+.nav-arrow.next {
+    right: -80px;
+}
+
+/* --- Mobile Adjustments --- */
+@media (max-width: 1100px) {
+    .home-body {
+        height: auto;
+        overflow: auto;
+    }
+    
+    .grey-bg-block {
+        display: none;
+    }
+
+    .home-container {
+        flex-direction: column;
+        padding: 40px 20px;
+    }
+
+    .profile-card {
+        margin-left: 0;
+        margin-bottom: 40px;
+    }
+
+    .home-text {
+        padding-left: 0;
+        max-width: 100%;
+    }
+    
+    .main-header, .main-footer {
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+    }
+    
+    .footer-right {
+        gap: 30px;
+    }
+}
+
+@media (max-width: 800px) {
+    .page-container {
+        padding: 0 30px 40px;
+        margin: 0 auto;
+        width: 100%;
+    }
+    
+    .timeline-item {
+        flex-direction: column;
+    }
+    
+    .timeline-left {
+        margin-bottom: 25px;
+        padding-right: 0;
+    }
+
+    .project-row {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .project-media {
+        width: 100%;
+        height: 300px;
+    }
+    
+    .project-gallery {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .nav-arrow {
+        position: static;
+        transform: none;
+        padding: 10px;
+    }
+    
+    .lightbox-content-wrapper {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 500px) {
+    .project-gallery {
+        grid-template-columns: 1fr;
+    }
+}
