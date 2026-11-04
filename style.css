@@ -120,7 +120,7 @@ body {
     left: 0;
     top: 0; 
     bottom: 0; 
-    width: calc(50% - 220px); 
+    width: calc(33% - 220px); 
     background-color: var(--bg-mid-grey);
     z-index: 0;
 }
