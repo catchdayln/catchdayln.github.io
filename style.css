@@ -328,31 +328,51 @@ body:not(.home-body) {
     display: block;
     height: auto;
     overflow: auto;
-    background-color: #f7f7f7;
+    background-color: #f4f4f4; /* Grey background like Wix original */
 }
 
-/* Centered container for subpages */
+/* Removed box-shadow & white background from page container so the body grey shows */
 .page-container {
     max-width: 980px;
     margin: 60px auto 80px;
     padding: 0 40px;
+    background: transparent;
+    box-shadow: none;
 }
 
 .page-header {
-    text-align: left;
+    text-align: center;
     padding: 40px 0 60px;
+}
+
+/* Added flex layout for header to align red square with text */
+.header-title-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.red-square-large {
+    width: 18px;
+    height: 18px;
+    background-color: var(--wix-red);
 }
 
 .page-header h1 {
     font-size: 3rem;
-    margin-bottom: 20px;
     color: #000;
+    margin-bottom: 0;
 }
 
 .intro-text {
     color: #555;
-    font-size: 1.15rem;
+    font-size: 1.05rem;
     line-height: 1.8;
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
 }
 
 /* Resume Timeline */
@@ -364,7 +384,7 @@ body:not(.home-body) {
     display: flex;
     flex-wrap: wrap;
     margin-bottom: 60px;
-    border-bottom: 1px solid #f0f0f0;
+    border-bottom: 1px solid #e0e0e0;
     padding-bottom: 50px;
 }
 
@@ -429,7 +449,7 @@ body:not(.home-body) {
 
 
 /* =========================================
-   PROJECTS LIST (Centered Vertical Stack with Boundaries)
+   PROJECTS LIST (Wix 1:1 Side-by-Side Box)
 ========================================= */
 .project-list {
     display: flex;
@@ -438,54 +458,55 @@ body:not(.home-body) {
     align-items: center; 
 }
 
-/* The Restored Boundary Box */
+/* Floating White Box with Sharp Corners & Shadow */
 .project-box {
     display: flex;
-    flex-direction: column;
+    flex-direction: row; /* Forces Side-by-Side layout */
     width: 100%;
     background: #fff;
-    box-shadow: 0 10px 40px rgba(0,0,0,0.08); 
-    border: 1px solid #eaeaea; 
-    border-radius: 8px; 
-    overflow: hidden;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.05); 
+    border-radius: 0; /* Sharp corners matching Wix */
     margin-bottom: 20px;
 }
 
-/* Inner padding for the text */
+/* Text Container with Thick Red Accent Border */
 .project-info {
-    padding: 50px 60px; 
+    flex: 1;
+    padding: 50px 40px; 
+    border-left: 8px solid var(--wix-red); /* The exact red accent line */
     display: flex;
     flex-direction: column;
+    justify-content: center;
 }
 
+/* The exact font colors from the Wix original */
 .project-info h2 {
-    font-size: 2.5rem;
+    font-size: 1.8rem;
     margin-bottom: 5px;
-    color: #000;
+    color: var(--wix-red);
 }
 
 .project-info .project-role {
     font-weight: bold;
-    font-size: 1rem;
-    letter-spacing: 1.5px;
-    color: var(--wix-red);
+    font-size: 0.95rem;
+    color: #000;
     margin-bottom: 25px;
 }
 
 .project-info .project-desc {
-    font-size: 1.15rem;
+    font-size: 1.05rem;
     color: #555;
     line-height: 1.8;
-    margin-bottom: 25px;
+    margin-bottom: 30px;
 }
 
 .project-info .btn-small {
     display: inline-block;
     padding: 10px 25px;
-    border: 2px solid var(--wix-red);
+    border: 2px solid var(--text-dark); /* Dark grey outline matches clean layout */
     background: transparent;
     text-decoration: none;
-    color: var(--wix-red);
+    color: var(--text-dark);
     border-radius: 25px;
     font-weight: bold;
     font-size: 0.8rem;
@@ -495,18 +516,20 @@ body:not(.home-body) {
 }
 
 .project-info .btn-small:hover {
-    background: var(--wix-red);
+    background: var(--text-dark);
     color: #fff;
 }
 
+/* Image Container */
 .project-media {
-    width: 100%;
+    flex: 1;
+    min-height: 350px;
 }
 
-/* Makes image span full width of boundary box bottom */
+/* Image fills entire right half perfectly */
 .project-media img {
     width: 100%;
-    height: auto;
+    height: 100%;
     object-fit: cover;
     display: block;
     background: #f0f0f0;
@@ -554,6 +577,7 @@ body:not(.home-body) {
 .hero-image {
     width: 100%;
     height: auto;
+    max-height: 600px;
     object-fit: cover;
     margin-bottom: 50px;
     background: #ddd;
@@ -664,7 +688,6 @@ body:not(.home-body) {
     right: -80px;
 }
 
-
 /* =========================================
    MOBILE & TABLET ADJUSTMENTS 
 ========================================= */
@@ -709,7 +732,6 @@ body:not(.home-body) {
 
 /* Tablets / Large Phones */
 @media (max-width: 800px) {
-    /* Header & Nav adjustments */
     .main-header {
         flex-direction: column;
         padding: 20px;
@@ -728,7 +750,6 @@ body:not(.home-body) {
         gap: 15px;
     }
 
-    /* Subpage layout adjustments */
     .page-container {
         padding: 0 25px 40px;
         margin: 30px auto;
@@ -762,17 +783,19 @@ body:not(.home-body) {
         min-width: 100%;
     }
 
-    /* Project Box Padding Fix for Mobile */
+    /* Stack project cards vertically on mobile */
+    .project-box {
+        flex-direction: column;
+    }
+
+    .project-media {
+        width: 100%;
+        height: 350px;
+        order: -1; /* Flips image to the top on mobile */
+    }
+
     .project-info {
         padding: 40px 30px; 
-    }
-
-    .project-info h2 {
-        font-size: 2rem;
-    }
-
-    .project-info .project-desc {
-        font-size: 1rem;
     }
 
     /* Project Detail Mobile */
