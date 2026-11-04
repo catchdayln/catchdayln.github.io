@@ -401,18 +401,19 @@ body:not(.home-body) {
 
 .project-info {
     flex: 1; 
-    padding: 50px 40px 40px 45px; 
+    padding: 50px 40px 50px 45px; 
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
+    justify-content: center; /* Tightly packs and vertically centers the text block */
     position: relative; 
 }
 
+/* Red Tab Flag - Adjusted top alignment */
 .project-info::before {
     content: '';
     position: absolute;
     left: 0;
-    top: 55px; 
+    top: 75px; 
     width: 8px;
     height: 45px;
     background-color: var(--wix-red);
@@ -424,7 +425,7 @@ body:not(.home-body) {
     font-weight: 600;
     font-size: 20px;
     color: var(--wix-red);
-    margin-bottom: 5px;
+    margin-bottom: 5px; /* Tight spacing to subtitle */
 }
 
 /* Specified: Avenir Regular 12px */
@@ -433,7 +434,7 @@ body:not(.home-body) {
     font-weight: 400;
     font-size: 12px;
     color: #000;
-    margin-bottom: 25px;
+    margin-bottom: 20px; /* Reduced spacing */
 }
 
 /* Specified: Avenir Light 17px, 1.5 line height */
@@ -443,12 +444,12 @@ body:not(.home-body) {
     font-size: 17px;
     color: #333;
     line-height: 1.5em;
-    margin-bottom: 25px;
-    flex-grow: 1; 
+    margin-bottom: 30px; /* Pushes the button down slightly */
 }
 
+/* See More Button - Correctly Centered */
 .project-info .btn-small {
-    align-self: flex-start; 
+    align-self: center; /* Centers the button horizontally within the info block */
     background-color: var(--wix-red);
     color: #ffffff;
     padding: 12px 35px;
@@ -723,7 +724,6 @@ body:not(.home-body) {
 .nav-arrow.next {
     right: -80px;
 }
-
 
 /* =========================================
    MOBILE & TABLET ADJUSTMENTS 
