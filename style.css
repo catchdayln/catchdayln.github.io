@@ -277,7 +277,6 @@ body {
     text-align: left;
 }
 
-
 /* --- Global Footer --- */
 .main-footer {
     padding: 30px 60px;
@@ -353,7 +352,7 @@ body:not(.home-body) {
 
 .page-header {
     text-align: center;
-    padding: 40px 0 40px; /* Reduced bottom padding */
+    padding: 40px 0 40px; 
 }
 
 .header-title-wrapper {
@@ -582,7 +581,7 @@ body:not(.home-body) {
 
 
 /* =========================================
-   RESUME TIMELINE
+   RESUME LAYOUT
 ========================================= */
 
 /* Resume Sub-Header Wrapper (Experience & Button) */
@@ -599,6 +598,12 @@ body:not(.home-body) {
     font-weight: 600;
     font-size: 24px;
     color: #000;
+}
+
+/* For sub-headers that do not have a button */
+.resume-sub-header.education-header {
+    justify-content: flex-start; 
+    margin-top: 20px; 
 }
 
 /* Resume Boundary Box (Matches 750px Project Box) */
@@ -622,6 +627,8 @@ body:not(.home-body) {
 .resume-left {
     flex: 0 0 220px; /* Fixed width column for Dates & Roles */
     padding-right: 30px;
+    display: flex;
+    flex-direction: column; /* Allows degree title to anchor to bottom */
 }
 
 .resume-right {
@@ -632,9 +639,9 @@ body:not(.home-body) {
 .resume-dates {
     font-family: 'Poppins', sans-serif;
     font-weight: 600;
-    font-size: 20px;
+    font-size: 18px;
     color: var(--wix-red);
-    margin-bottom: 10px;
+    margin-bottom: 15px;
 }
 
 .resume-role {
@@ -643,7 +650,7 @@ body:not(.home-body) {
     font-size: 13px;
     color: #000;
     letter-spacing: 1px;
-    margin-bottom: 8px;
+    margin-bottom: 15px;
     text-transform: uppercase;
 }
 
@@ -652,14 +659,22 @@ body:not(.home-body) {
     font-weight: 300;
     font-size: 13px;
     color: var(--wix-red);
-    margin-bottom: 8px;
 }
 
-.resume-type {
+.text-black {
+    color: #000 !important;
+}
+
+/* The degree title pushed to the bottom of the left column */
+.degree-title {
     font-family: 'Avenir Light', 'Nunito Sans', sans-serif;
-    font-size: 12px;
     font-style: italic;
-    color: #888;
+    font-size: 13px;
+    color: var(--wix-red);
+    margin-top: auto; /* Pushes it to the bottom */
+}
+.degree-title span {
+    font-weight: bold;
 }
 
 /* Resume Right Column Typography */
@@ -682,19 +697,102 @@ body:not(.home-body) {
     text-decoration: underline;
 }
 
+.red-link.bold {
+    font-weight: bold;
+}
+
 .red-link:hover {
     color: var(--wix-red-hover);
 }
 
+/* Bullet list inside description */
+.resume-bullet-list {
+    margin-left: 20px;
+    margin-bottom: 25px;
+}
+
+.resume-bullet-list li {
+    font-family: 'Avenir Light', 'Avenir', 'Nunito Sans', sans-serif;
+    font-weight: 300;
+    font-size: 17px;
+    line-height: 1.5em;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.resume-bullet-list li::marker {
+    color: var(--wix-red);
+}
+
+/* Margin helper for paragraph spacing */
+.mt-15 {
+    margin-top: 15px;
+}
+
+/* Highlight section at bottom of right column */
 .resume-highlight {
-    margin-top: 25px;
+    margin-top: 35px;
 }
 
 .resume-highlight p {
+    font-family: 'Avenir Light', 'Avenir', 'Nunito Sans', sans-serif;
     font-style: italic;
     font-size: 15px;
     color: #555;
     margin-bottom: 0;
+}
+
+/* --- Skills Layout --- */
+.skills-box {
+    padding: 60px 45px;
+}
+
+.skills-wrapper {
+    width: 100%;
+}
+
+.skills-wrapper h2 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 24px;
+    color: #000;
+    margin-bottom: 30px;
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    row-gap: 25px;
+    column-gap: 20px;
+    list-style: none;
+    margin-bottom: 60px;
+}
+
+.skills-grid.two-col {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.skills-wrapper ul:last-child {
+    margin-bottom: 0;
+}
+
+.skills-grid li {
+    font-family: 'Avenir Light', 'Nunito Sans', sans-serif;
+    font-weight: 300;
+    font-size: 15px;
+    color: #333;
+    display: flex;
+    align-items: center;
+}
+
+/* Red Square Bullet Point */
+.skills-grid li::before {
+    content: '';
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    background-color: var(--wix-red);
+    margin-right: 15px;
 }
 
 
@@ -864,6 +962,11 @@ body:not(.home-body) {
         padding-right: 0;
         margin-bottom: 25px;
     }
+    
+    /* Skills Box Mobile */
+    .skills-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
 
     /* Project Detail Mobile */
     .project-gallery {
@@ -916,6 +1019,10 @@ body:not(.home-body) {
 
     .btn {
         margin-bottom: 10px;
+    }
+    
+    .skills-grid {
+        grid-template-columns: 1fr;
     }
 
     .project-gallery {
