@@ -7,7 +7,7 @@
     --text-dark: #2b2b2b;
     --text-grey: #555555;
     --bg-light-grey: #e9e9e9; 
-    --bg-mid-grey: #d5d5d5; 
+    --bg-mid-grey: #e3e3e3; 
 }
 
 * {
@@ -58,8 +58,9 @@ body {
 }
 
 .site-title a {
-    font-weight: 800;
-    font-size: 1.25rem;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 18px;
     letter-spacing: 1px;
     color: #000;
     text-decoration: none;
@@ -77,7 +78,8 @@ body {
 }
 
 .site-subtitle {
-    font-size: 0.9rem;
+    font-family: 'Avenir Light', 'Nunito Sans', sans-serif;
+    font-size: 14px;
     color: var(--text-grey);
     letter-spacing: 1.5px;
     font-weight: 300;
@@ -90,10 +92,11 @@ body {
 }
 
 .main-nav a {
+    font-family: 'Avenir', 'Nunito Sans', sans-serif;
     text-decoration: none;
     color: #000;
-    font-size: 0.85rem;
-    letter-spacing: 1.5px;
+    font-size: 13px;
+    letter-spacing: 1px;
     font-weight: 400;
     transition: color 0.3s ease;
 }
@@ -111,12 +114,13 @@ body {
     background-color: #fff;
 }
 
+/* The grey block now strictly spans the full height */
 .grey-bg-block {
     position: absolute;
     left: 0;
-    top: 5vh; 
-    bottom: 5vh; 
-    width: 38%;
+    top: 0; 
+    bottom: 0; 
+    width: 45%;
     background-color: var(--bg-mid-grey);
     z-index: 0;
 }
@@ -126,30 +130,30 @@ body {
     z-index: 10;
     display: flex;
     width: 100%;
-    max-width: 1300px;
+    max-width: 1100px;
     margin: 0 auto;
     align-items: center;
 }
 
 /* Overlapping Card */
 .profile-card {
-    width: 400px;
+    width: 360px;
     box-shadow: 0 10px 30px rgba(0,0,0,0.1);
     display: flex;
     flex-direction: column;
-    margin-left: 15%; 
+    margin-left: 0; 
     background: #fff;
 }
 
 .card-top {
     background-color: var(--bg-light-grey);
-    padding: 60px 40px 40px;
+    padding: 50px 30px 40px;
     text-align: center;
 }
 
 .profile-img {
-    width: 200px;
-    height: 200px;
+    width: 220px;
+    height: 220px;
     border-radius: 50%;
     object-fit: cover;
     margin-bottom: 25px;
@@ -157,33 +161,34 @@ body {
 }
 
 .card-top h1 {
-    font-size: 2.2rem;
+    font-family: 'Poppins', sans-serif;
+    font-size: 32px;
     line-height: 1.2;
     margin-bottom: 20px;
-    font-weight: 800;
+    font-weight: 600;
     color: #000;
 }
 
 .red-line {
-    width: 50px;
+    width: 40px;
     height: 2px;
     background-color: var(--wix-red);
     margin: 0 auto 20px;
 }
 
 .job-title {
-    font-size: 0.85rem;
+    font-family: 'Avenir Light', 'Nunito Sans', sans-serif;
+    font-size: 13px;
     letter-spacing: 3px;
     color: #444;
-    font-weight: bold;
 }
 
 .card-bottom {
     background-color: #fff;
-    padding: 25px;
+    padding: 20px;
     display: flex;
     justify-content: center;
-    gap: 25px;
+    gap: 20px;
 }
 
 .card-bottom a {
@@ -198,35 +203,38 @@ body {
 /* Right Side Text Block */
 .home-text {
     flex: 1;
-    padding-left: 80px;
-    max-width: 650px;
+    padding-left: 100px;
+    max-width: 700px;
 }
 
 .home-text h2 {
-    font-size: 7.5rem;
-    font-weight: 800;
+    font-family: 'Poppins', sans-serif;
+    font-size: 90px;
+    font-weight: 600;
     line-height: 1;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
 }
 
 .home-text h3 {
-    font-size: 1.8rem;
-    font-weight: 400;
-    margin-bottom: 40px;
+    font-family: 'Avenir Light', 'Nunito Sans', sans-serif;
+    font-size: 26px;
+    font-weight: 300;
+    margin-bottom: 35px;
 }
 
 .action-buttons {
     display: flex;
     gap: 15px;
-    margin-bottom: 40px;
+    margin-bottom: 35px;
 }
 
 .btn {
     display: inline-block;
-    padding: 12px 35px;
+    padding: 10px 30px;
     border-radius: 30px;
+    font-family: 'Avenir', 'Nunito Sans', sans-serif;
     font-weight: bold;
-    font-size: 0.85rem;
+    font-size: 13px;
     letter-spacing: 1px;
     text-decoration: none;
     transition: all 0.3s ease;
@@ -255,16 +263,18 @@ body {
 }
 
 .quote {
+    font-family: 'Avenir Light', 'Nunito Sans', sans-serif;
     font-style: italic;
-    font-size: 1.15rem;
+    font-size: 17px;
     margin-bottom: 25px;
 }
 
 .bio {
-    font-size: 1.05rem;
-    line-height: 1.8;
+    font-family: 'Avenir Light', 'Nunito Sans', sans-serif;
+    font-size: 17px;
+    line-height: 1.5em;
     color: var(--text-grey);
-    text-align: justify;
+    text-align: left; /* Matched left alignment */
 }
 
 /* --- Global Footer --- */
@@ -274,7 +284,8 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    font-size: 0.85rem;
+    font-family: 'Avenir', 'Nunito Sans', sans-serif;
+    font-size: 13px;
     z-index: 100;
     border-top: 1px solid #eaeaea;
 }
@@ -293,7 +304,6 @@ body {
 .footer-label {
     font-weight: bold;
     color: #000;
-    font-size: 0.95rem;
 }
 
 .footer-col a {
@@ -355,7 +365,6 @@ body:not(.home-body) {
     background-color: var(--wix-red);
 }
 
-/* Specified: Poppins Semi-Bold 35px */
 .page-header h1 {
     font-family: 'Poppins', sans-serif;
     font-weight: 600;
@@ -364,7 +373,6 @@ body:not(.home-body) {
     margin-bottom: 0;
 }
 
-/* Specified: Avenir Light 17px, 1.5 line height */
 .intro-text {
     font-family: 'Avenir Light', 'Avenir', 'Nunito Sans', sans-serif;
     font-weight: 300;
@@ -386,7 +394,6 @@ body:not(.home-body) {
     align-items: center; 
 }
 
-/* Exact 750x410 Boundary Box */
 .project-box {
     display: flex;
     flex-direction: row; 
@@ -404,11 +411,10 @@ body:not(.home-body) {
     padding: 50px 40px 50px 45px; 
     display: flex;
     flex-direction: column;
-    justify-content: center; /* Tightly packs and vertically centers the text block */
+    justify-content: center; 
     position: relative; 
 }
 
-/* Red Tab Flag - Adjusted top alignment */
 .project-info::before {
     content: '';
     position: absolute;
@@ -419,37 +425,34 @@ body:not(.home-body) {
     background-color: var(--wix-red);
 }
 
-/* Specified: Poppins Semi-Bold 20px */
 .project-info h2 {
     font-family: 'Poppins', sans-serif;
     font-weight: 600;
     font-size: 20px;
     color: var(--wix-red);
-    margin-bottom: 5px; /* Tight spacing to subtitle */
+    margin-bottom: 5px; 
 }
 
-/* Specified: Avenir Regular 12px */
 .project-info .project-role {
     font-family: 'Avenir', 'Nunito Sans', sans-serif;
     font-weight: 400;
     font-size: 12px;
     color: #000;
-    margin-bottom: 20px; /* Reduced spacing */
+    margin-bottom: 20px; 
 }
 
-/* Specified: Avenir Light 17px, 1.5 line height */
 .project-info .project-desc {
     font-family: 'Avenir Light', 'Avenir', 'Nunito Sans', sans-serif;
     font-weight: 300;
     font-size: 17px;
     color: #333;
     line-height: 1.5em;
-    margin-bottom: 30px; /* Pushes the button down slightly */
+    margin-bottom: 30px; 
+    flex-grow: 1; 
 }
 
-/* See More Button - Correctly Centered */
 .project-info .btn-small {
-    align-self: center; /* Centers the button horizontally within the info block */
+    align-self: center; 
     background-color: var(--wix-red);
     color: #ffffff;
     padding: 12px 35px;
@@ -467,7 +470,6 @@ body:not(.home-body) {
     background-color: var(--wix-red-hover);
 }
 
-/* Exact 322px Width for Right Side Image */
 .project-media {
     width: 322px; 
     height: 100%;
@@ -496,7 +498,8 @@ body:not(.home-body) {
     margin-bottom: 25px;
     text-decoration: none;
     color: #777;
-    font-size: 1rem;
+    font-family: 'Avenir', 'Nunito Sans', sans-serif;
+    font-size: 14px;
     font-weight: bold;
     letter-spacing: 1px;
     transition: color 0.3s ease;
@@ -609,6 +612,7 @@ body:not(.home-body) {
 }
 
 .job-role {
+    font-family: 'Avenir', 'Nunito Sans', sans-serif;
     font-weight: bold;
     letter-spacing: 1px;
     margin-bottom: 5px;
@@ -623,6 +627,7 @@ body:not(.home-body) {
 }
 
 .job-type {
+    font-family: 'Avenir', 'Nunito Sans', sans-serif;
     font-size: 13px;
     color: #888;
 }
@@ -724,6 +729,7 @@ body:not(.home-body) {
 .nav-arrow.next {
     right: -80px;
 }
+
 
 /* =========================================
    MOBILE & TABLET ADJUSTMENTS 
