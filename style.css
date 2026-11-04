@@ -2,12 +2,12 @@
    VARIABLES & GLOBAL RESETS
 ========================================= */
 :root {
-    --wix-red: #bb152a; /* Exact match to the Wix red accent */
+    --wix-red: #bb152a; 
     --wix-red-hover: #960f21;
     --text-dark: #2b2b2b;
     --text-grey: #555555;
-    --bg-light-grey: #e9e9e9; /* Profile card top */
-    --bg-mid-grey: #d5d5d5; /* Floating background box */
+    --bg-light-grey: #e9e9e9; 
+    --bg-mid-grey: #d5d5d5; 
 }
 
 * {
@@ -31,7 +31,7 @@ body {
     height: 100vh;
     display: flex;
     flex-direction: column;
-    overflow: hidden; /* Prevents scrolling on homepage */
+    overflow: hidden; 
 }
 
 /* --- Global Header --- */
@@ -104,7 +104,7 @@ body {
 
 /* --- Homepage Layout --- */
 .home-main {
-    flex: 1; /* Takes up remaining height between header and footer */
+    flex: 1; 
     position: relative;
     display: flex;
     align-items: center;
@@ -137,7 +137,7 @@ body {
     box-shadow: 0 10px 30px rgba(0,0,0,0.1);
     display: flex;
     flex-direction: column;
-    margin-left: 15%; /* Forces the card to overlap the edge of the grey block */
+    margin-left: 15%; 
     background: #fff;
 }
 
@@ -332,46 +332,48 @@ body:not(.home-body) {
 }
 
 .page-container {
-    max-width: 1100px;
+    max-width: 1200px;
     margin: 60px auto;
-    padding: 0 40px 60px;
+    padding: 0 60px 80px;
     background: #fff;
     box-shadow: 0 10px 30px rgba(0,0,0,0.05);
 }
 
 .page-header {
     text-align: center;
-    padding: 60px 0 40px;
+    padding: 80px 0 50px;
     border-bottom: 1px solid #eaeaea;
-    margin-bottom: 50px;
+    margin-bottom: 60px;
 }
 
 .page-header h1 {
-    font-size: 3rem;
-    margin-bottom: 10px;
+    font-size: 3.5rem;
+    margin-bottom: 15px;
 }
 
 .page-header h2 {
-    font-size: 1.5rem;
-    color: #555;
-    margin-bottom: 30px;
+    font-size: 1.8rem;
+    color: var(--text-grey);
+    margin-bottom: 40px;
     font-weight: normal;
 }
 
 .intro-text {
-    max-width: 800px;
+    max-width: 850px;
     margin: 0 auto;
     color: #555;
     text-align: justify;
+    font-size: 1.1rem;
+    line-height: 1.8;
 }
 
 /* Resume Timeline */
 .timeline-item {
     display: flex;
     flex-wrap: wrap;
-    margin-bottom: 50px;
+    margin-bottom: 60px;
     border-bottom: 1px solid #f0f0f0;
-    padding-bottom: 40px;
+    padding-bottom: 50px;
 }
 
 .timeline-item:last-child {
@@ -383,325 +385,28 @@ body:not(.home-body) {
 .timeline-left {
     flex: 1;
     min-width: 250px;
-    padding-right: 30px;
+    padding-right: 40px;
 }
 
 .timeline-left h3 {
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     margin-bottom: 10px;
+    color: var(--wix-red);
 }
 
 .job-role {
     font-weight: bold;
-    letter-spacing: 1px;
+    letter-spacing: 1.5px;
     margin-bottom: 5px;
+    font-size: 1.05rem;
 }
 
 .company {
     color: #555;
-    margin-bottom: 5px;
+    margin-bottom: 10px;
     font-style: italic;
-}
-
-.job-type {
-    font-size: 0.85rem;
-    color: #888;
-}
-
-.timeline-right {
-    flex: 2;
-    min-width: 300px;
-}
-
-.timeline-right p {
-    margin-bottom: 15px;
-    color: #444;
-    text-align: justify;
-}
-
-.timeline-right .highlight {
-    font-style: italic;
-    font-size: 0.95rem;
-    color: #666;
-    margin-top: 20px;
-}
-
-/* Projects Grid */
-.project-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 40px;
-}
-
-.project-card {
-    background: #f9f9f9;
-    border: 1px solid #eaeaea;
-    border-radius: 5px;
-    overflow: hidden;
-    transition: transform 0.3s ease;
-}
-
-.project-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.08);
-}
-
-.project-card img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-    background: #ddd;
-}
-
-.project-info {
-    padding: 25px;
-}
-
-.project-info h2 {
-    font-size: 1.4rem;
-    margin-bottom: 5px;
-}
-
-.project-role {
-    font-weight: bold;
-    font-size: 0.85rem;
-    letter-spacing: 1px;
-    color: #666;
-    margin-bottom: 15px;
-}
-
-.project-info p {
-    font-size: 0.95rem;
-    color: #555;
-    margin-bottom: 25px;
-    line-height: 1.5;
-}
-
-.btn-small {
-    display: inline-block;
-    padding: 8px 20px;
-    border: 2px solid #333;
-    background: transparent;
-    text-decoration: none;
-    color: #333;
-    border-radius: 20px;
-    font-weight: bold;
-    font-size: 0.75rem;
-    transition: all 0.3s ease;
-}
-
-.btn-small:hover {
-    background: #333;
-    color: #fff;
-}
-
-/* Individual Project Detail Pages */
-.project-detail-header {
-    text-align: center;
-    padding: 40px 0 30px;
-    border-bottom: 1px solid #eaeaea;
-    margin-bottom: 40px;
-}
-
-.back-link {
-    display: inline-block;
-    margin-bottom: 20px;
-    text-decoration: none;
-    color: #555;
-    font-size: 0.9rem;
-    font-weight: bold;
-    transition: color 0.3s ease;
-}
-
-.back-link:hover {
-    color: #000;
-}
-
-.project-detail-header h1 {
-    font-size: 2.5rem;
-    margin-bottom: 5px;
-}
-
-.project-content {
-    max-width: 800px;
-    margin: 0 auto;
-}
-
-.hero-image {
-    width: 100%;
-    height: auto;
-    max-height: 500px;
-    object-fit: cover;
-    margin-bottom: 40px;
-    background: #ddd;
-}
-
-.text-block {
-    margin-bottom: 40px;
-}
-
-.text-block p {
-    margin-bottom: 20px;
-    color: #444;
-    text-align: justify;
     font-size: 1.05rem;
 }
 
-.project-gallery {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 0;
-    margin-bottom: 40px;
-}
-
-.project-gallery img {
-    width: 100%;
-    height: 250px; 
-    object-fit: cover;
-    display: block;
-    background: #ddd;
-    cursor: pointer;
-    transition: opacity 0.2s ease;
-}
-
-.project-gallery img:hover {
-    opacity: 0.8;
-}
-
-/* Lightbox Modal */
-.lightbox {
-    display: none; 
-    position: fixed;
-    z-index: 9999;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.9);
-    align-items: center;
-    justify-content: center;
-}
-
-.lightbox-content-wrapper {
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    max-width: 90%;
-    max-height: 90%;
-}
-
-#lightbox-img {
-    max-width: 100%;
-    max-height: 90vh;
-    box-shadow: 0 0 20px rgba(0,0,0,0.5);
-    object-fit: contain;
-}
-
-.close-lightbox {
-    position: absolute;
-    top: 20px;
-    right: 35px;
-    color: #f1f1f1;
-    font-size: 40px;
-    font-weight: bold;
-    cursor: pointer;
-    z-index: 10000;
-}
-
-.close-lightbox:hover,
-.close-lightbox:focus {
-    color: #bbb;
-    text-decoration: none;
-    cursor: pointer;
-}
-
-.nav-arrow {
-    background: none;
-    border: none;
-    color: white;
-    font-size: 3rem;
-    cursor: pointer;
-    padding: 0 20px;
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    transition: color 0.2s ease;
-}
-
-.nav-arrow:hover {
-    color: #ccc;
-}
-
-.nav-arrow.prev {
-    left: -70px;
-}
-
-.nav-arrow.next {
-    right: -70px;
-}
-
-/* --- Mobile Adjustments --- */
-@media (max-width: 1100px) {
-    .home-body {
-        height: auto;
-        overflow: auto;
-    }
-    
-    .grey-bg-block {
-        display: none;
-    }
-
-    .home-container {
-        flex-direction: column;
-        padding: 40px 20px;
-    }
-
-    .profile-card {
-        margin-left: 0;
-        margin-bottom: 40px;
-    }
-
-    .home-text {
-        padding-left: 0;
-        max-width: 100%;
-    }
-    
-    .main-header, .main-footer {
-        flex-direction: column;
-        text-align: center;
-        gap: 20px;
-    }
-    
-    .footer-right {
-        gap: 30px;
-    }
-}
-@media (max-width: 800px) {
-    .page-container {
-        padding: 0 20px 40px;
-        margin: 20px auto;
-    }
-    .timeline-item {
-        flex-direction: column;
-    }
-    .timeline-left {
-        margin-bottom: 20px;
-    }
-    .project-gallery {
-        grid-template-columns: repeat(2, 1fr);
-    }
-    .nav-arrow {
-        position: static;
-        transform: none;
-        padding: 10px;
-    }
-    .lightbox-content-wrapper {
-        flex-direction: column;
-    }
-}
-@media (max-width: 500px) {
-    .project-gallery {
-        grid-template-columns: 1fr;
-    }
-}
+.job-type {
+    font
