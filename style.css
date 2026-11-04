@@ -22,6 +22,7 @@ body {
     color: var(--text-dark);
     line-height: 1.6;
     -webkit-font-smoothing: antialiased;
+    overflow-x: hidden; /* Prevents horizontal scrolling on mobile */
 }
 
 /* =========================================
@@ -230,6 +231,7 @@ body {
     letter-spacing: 1px;
     text-decoration: none;
     transition: all 0.3s ease;
+    text-align: center;
 }
 
 .btn-outline {
@@ -331,7 +333,6 @@ body:not(.home-body) {
     background-color: #fff;
 }
 
-/* Wix standard boundary for content */
 .page-container {
     max-width: 980px;
     margin: 60px auto 80px;
@@ -650,9 +651,13 @@ body:not(.home-body) {
     right: -80px;
 }
 
+
 /* =========================================
-   MOBILE ADJUSTMENTS
+   MOBILE & TABLET ADJUSTMENTS 
+   (Responsive Formatting)
 ========================================= */
+
+/* Tablet & Smaller Laptops */
 @media (max-width: 1100px) {
     .home-body {
         height: auto;
@@ -671,42 +676,105 @@ body:not(.home-body) {
     .profile-card {
         margin-left: 0;
         margin-bottom: 40px;
+        width: 100%;
+        max-width: 500px;
     }
 
     .home-text {
         padding-left: 0;
         max-width: 100%;
-    }
-    
-    .main-header, .main-footer {
-        flex-direction: column;
         text-align: center;
-        gap: 20px;
     }
-    
-    .footer-right {
-        gap: 30px;
+
+    .action-buttons {
+        justify-content: center;
+    }
+
+    .bio {
+        text-align: left;
     }
 }
 
+/* Tablets / Large Phones */
 @media (max-width: 800px) {
-    .page-container, .projects-wrapper {
-        padding: 0 30px 40px;
-        margin: 20px auto;
-        width: 100%;
-    }
-    
-    .timeline-item {
+    /* Header & Nav adjustments */
+    .main-header {
         flex-direction: column;
-    }
-    
-    .timeline-left {
-        margin-bottom: 25px;
-        padding-right: 0;
+        padding: 20px;
+        gap: 20px;
+        text-align: center;
     }
 
+    .logo-container {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .main-nav {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
+
+    /* Subpage layout adjustments */
+    .page-container {
+        padding: 0 25px 40px;
+        margin: 30px auto;
+    }
+
+    .page-header {
+        padding: 30px 0 40px;
+    }
+
+    .page-header h1 {
+        font-size: 2.5rem;
+    }
+
+    .intro-text {
+        font-size: 1rem;
+    }
+
+    /* Resume Timeline Mobile */
+    .timeline-item {
+        flex-direction: column;
+        padding-bottom: 30px;
+        margin-bottom: 40px;
+    }
+
+    .timeline-left {
+        padding-right: 0;
+        margin-bottom: 20px;
+    }
+
+    .timeline-right {
+        min-width: 100%;
+    }
+
+    /* Project List Mobile */
+    .project-list {
+        gap: 60px;
+    }
+
+    .project-box h2 {
+        font-size: 2rem;
+    }
+
+    .project-desc {
+        font-size: 1rem;
+    }
+
+    /* Project Detail Mobile */
+    .project-detail-header h1 {
+        font-size: 2.5rem;
+    }
+    
     .project-gallery {
         grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+    
+    .project-gallery img {
+        height: 200px;
     }
     
     .nav-arrow {
@@ -718,10 +786,46 @@ body:not(.home-body) {
     .lightbox-content-wrapper {
         flex-direction: column;
     }
+
+    /* Footer Mobile */
+    .main-footer {
+        flex-direction: column;
+        text-align: center;
+        padding: 40px 20px;
+        gap: 30px;
+    }
+    
+    .footer-right {
+        flex-direction: column;
+        gap: 20px;
+        align-items: center;
+    }
 }
 
+/* Small Phones */
 @media (max-width: 500px) {
+    .home-text h2 {
+        font-size: 4rem;
+    }
+
+    .home-text h3 {
+        font-size: 1.3rem;
+    }
+
+    .action-buttons {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .btn {
+        margin-bottom: 10px;
+    }
+
     .project-gallery {
         grid-template-columns: 1fr;
+    }
+
+    .project-gallery img {
+        height: 250px;
     }
 }
