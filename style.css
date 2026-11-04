@@ -10,7 +10,6 @@
     --bg-mid-grey: #d5d5d5; 
 }
 
-/* FIXED: Changed '-' to '*' */
 * {
     box-sizing: border-box;
     margin: 0;
@@ -321,6 +320,7 @@ body {
     color: var(--wix-red);
 }
 
+
 /* =========================================
    SUB-PAGE STYLES (Resume, Projects, etc.)
 ========================================= */
@@ -515,37 +515,22 @@ body:not(.home-body) {
     color: #fff;
 }
 
-/* Auto-Play Carousel Styling */
+/* Static Image Styling */
 .project-media {
     flex: 1.2;
     min-width: 400px;
     position: relative;
     background: #f0f0f0;
+    display: flex;
 }
 
-.carousel-track {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-}
-
-.slide {
-    position: absolute;
-    top: 0;
-    left: 0;
+.project-media img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    opacity: 0;
-    transition: opacity 1s ease-in-out;
+    display: block;
 }
 
-.slide.active {
-    opacity: 1;
-    z-index: 1;
-}
 
 /* =========================================
    INDIVIDUAL PROJECT DETAIL PAGES
@@ -740,7 +725,6 @@ body:not(.home-body) {
 }
 
 @media (max-width: 900px) {
-    /* Adjusted to target .project-box instead of .project-row */
     .project-box {
         flex-direction: column;
     }
