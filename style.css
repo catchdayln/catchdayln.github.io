@@ -10,6 +10,7 @@
     --bg-mid-grey: #d5d5d5; 
 }
 
+/* FIXED: Changed '-' to '*' */
 * {
     box-sizing: border-box;
     margin: 0;
@@ -320,7 +321,6 @@ body {
     color: var(--wix-red);
 }
 
-
 /* =========================================
    SUB-PAGE STYLES (Resume, Projects, etc.)
 ========================================= */
@@ -437,34 +437,44 @@ body:not(.home-body) {
 
 
 /* =========================================
-   PROJECTS LIST (Spacious Row Layout)
+   PROJECTS LIST (Spacious Boundary Box Layout)
 ========================================= */
+.projects-wrapper {
+    max-width: 1200px;
+    margin: 60px auto 80px;
+    padding: 0 40px;
+}
+
 .project-list {
     display: flex;
     flex-direction: column;
-    gap: 80px;
-}
-
-.project-row {
-    display: flex;
-    align-items: center;
+    align-items: center; 
     gap: 60px;
-    padding-bottom: 80px;
-    border-bottom: 1px solid #eaeaea;
+    width: 100%;
 }
 
-.project-row:last-child {
-    border-bottom: none;
-    padding-bottom: 0;
+.project-box {
+    display: flex;
+    align-items: stretch;
+    width: 100%;
+    background: #fff;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.08); 
+    border: 1px solid #eaeaea;
+    border-radius: 8px; 
+    overflow: hidden;
 }
 
 .project-info {
     flex: 1;
     min-width: 300px;
+    padding: 50px 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .project-info h2 {
-    font-size: 2rem;
+    font-size: 2.2rem;
     margin-bottom: 8px;
     color: #000;
 }
@@ -474,7 +484,7 @@ body:not(.home-body) {
     font-size: 0.95rem;
     letter-spacing: 1.5px;
     color: var(--wix-red);
-    margin-bottom: 20px;
+    margin-bottom: 25px;
 }
 
 .project-info p {
@@ -497,6 +507,7 @@ body:not(.home-body) {
     font-size: 0.8rem;
     letter-spacing: 1px;
     transition: all 0.3s ease;
+    align-self: flex-start; 
 }
 
 .btn-small:hover {
@@ -507,17 +518,15 @@ body:not(.home-body) {
 /* Auto-Play Carousel Styling */
 .project-media {
     flex: 1.2;
-    min-width: 350px;
-    height: 400px;
+    min-width: 400px;
     position: relative;
-    border-radius: 5px;
-    overflow: hidden;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
     background: #f0f0f0;
 }
 
 .carousel-track {
-    position: relative;
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
 }
@@ -538,7 +547,9 @@ body:not(.home-body) {
     z-index: 1;
 }
 
-/* Individual Project Detail Pages */
+/* =========================================
+   INDIVIDUAL PROJECT DETAIL PAGES
+========================================= */
 .project-detail-header {
     text-align: center;
     padding: 50px 0 40px;
@@ -689,7 +700,9 @@ body:not(.home-body) {
     right: -80px;
 }
 
-/* --- Mobile Adjustments --- */
+/* =========================================
+   MOBILE ADJUSTMENTS
+========================================= */
 @media (max-width: 1100px) {
     .home-body {
         height: auto;
@@ -726,10 +739,27 @@ body:not(.home-body) {
     }
 }
 
+@media (max-width: 900px) {
+    /* Adjusted to target .project-box instead of .project-row */
+    .project-box {
+        flex-direction: column;
+    }
+
+    .project-media {
+        width: 100%;
+        height: 350px;
+        order: -1; 
+    }
+
+    .project-info {
+        padding: 40px 30px;
+    }
+}
+
 @media (max-width: 800px) {
-    .page-container {
+    .page-container, .projects-wrapper {
         padding: 0 30px 40px;
-        margin: 0 auto;
+        margin: 20px auto;
         width: 100%;
     }
     
@@ -740,16 +770,6 @@ body:not(.home-body) {
     .timeline-left {
         margin-bottom: 25px;
         padding-right: 0;
-    }
-
-    .project-row {
-        flex-direction: column;
-        gap: 30px;
-    }
-
-    .project-media {
-        width: 100%;
-        height: 300px;
     }
     
     .project-gallery {
