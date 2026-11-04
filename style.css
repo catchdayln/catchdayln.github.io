@@ -18,7 +18,7 @@
 }
 
 body {
-    background-color: #fff; 
+    background-color: #f4f4f4; 
     color: var(--text-dark);
     line-height: 1.6;
     -webkit-font-smoothing: antialiased;
@@ -625,10 +625,10 @@ body:not(.home-body) {
 }
 
 .resume-left {
-    flex: 0 0 220px; /* Fixed width column for Dates & Roles */
+    flex: 0 0 220px; 
     padding-right: 30px;
     display: flex;
-    flex-direction: column; /* Allows degree title to anchor to bottom */
+    flex-direction: column; 
 }
 
 .resume-right {
@@ -671,7 +671,7 @@ body:not(.home-body) {
     font-style: italic;
     font-size: 13px;
     color: var(--wix-red);
-    margin-top: auto; /* Pushes it to the bottom */
+    margin-top: auto; 
 }
 .degree-title span {
     font-weight: bold;
@@ -759,13 +759,16 @@ body:not(.home-body) {
     margin-bottom: 30px;
 }
 
+/* Bulletproof CSS resets specifically for the skills grid */
 .skills-grid {
-    display: grid;
+    display: grid !important;
     grid-template-columns: repeat(3, 1fr);
     row-gap: 25px;
     column-gap: 20px;
-    list-style: none;
+    padding-left: 0 !important;
+    margin-top: 0;
     margin-bottom: 60px;
+    list-style: none !important; 
 }
 
 .skills-grid.two-col {
@@ -783,6 +786,7 @@ body:not(.home-body) {
     color: #333;
     display: flex;
     align-items: center;
+    list-style-type: none !important; /* Forces the browser to strip the black disc */
 }
 
 /* Red Square Bullet Point */
@@ -793,6 +797,7 @@ body:not(.home-body) {
     height: 12px;
     background-color: var(--wix-red);
     margin-right: 15px;
+    flex-shrink: 0;
 }
 
 
