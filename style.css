@@ -22,7 +22,6 @@ body {
     color: var(--text-dark);
     line-height: 1.6;
     -webkit-font-smoothing: antialiased;
-    overflow-x: hidden; /* Prevents horizontal scrolling on mobile */
 }
 
 /* =========================================
@@ -231,7 +230,6 @@ body {
     letter-spacing: 1px;
     text-decoration: none;
     transition: all 0.3s ease;
-    text-align: center;
 }
 
 .btn-outline {
@@ -330,9 +328,10 @@ body:not(.home-body) {
     display: block;
     height: auto;
     overflow: auto;
-    background-color: #fff;
+    background-color: #f7f7f7;
 }
 
+/* Centered container for subpages */
 .page-container {
     max-width: 980px;
     margin: 60px auto 80px;
@@ -430,28 +429,42 @@ body:not(.home-body) {
 
 
 /* =========================================
-   PROJECTS LIST (Centered Vertical Stack)
+   PROJECTS LIST (Centered Vertical Stack with Boundaries)
 ========================================= */
 .project-list {
     display: flex;
     flex-direction: column;
-    gap: 80px;
+    gap: 60px;
+    align-items: center; 
 }
 
+/* The Restored Boundary Box */
 .project-box {
     display: flex;
     flex-direction: column;
     width: 100%;
+    background: #fff;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.08); 
+    border: 1px solid #eaeaea; 
+    border-radius: 8px; 
+    overflow: hidden;
     margin-bottom: 20px;
 }
 
-.project-box h2 {
+/* Inner padding for the text */
+.project-info {
+    padding: 50px 60px; 
+    display: flex;
+    flex-direction: column;
+}
+
+.project-info h2 {
     font-size: 2.5rem;
     margin-bottom: 5px;
     color: #000;
 }
 
-.project-role {
+.project-info .project-role {
     font-weight: bold;
     font-size: 1rem;
     letter-spacing: 1.5px;
@@ -459,14 +472,14 @@ body:not(.home-body) {
     margin-bottom: 25px;
 }
 
-.project-desc {
+.project-info .project-desc {
     font-size: 1.15rem;
     color: #555;
     line-height: 1.8;
     margin-bottom: 25px;
 }
 
-.btn-small {
+.project-info .btn-small {
     display: inline-block;
     padding: 10px 25px;
     border: 2px solid var(--wix-red);
@@ -479,10 +492,9 @@ body:not(.home-body) {
     letter-spacing: 1px;
     transition: all 0.3s ease;
     align-self: flex-start; 
-    margin-bottom: 40px;
 }
 
-.btn-small:hover {
+.project-info .btn-small:hover {
     background: var(--wix-red);
     color: #fff;
 }
@@ -491,6 +503,7 @@ body:not(.home-body) {
     width: 100%;
 }
 
+/* Makes image span full width of boundary box bottom */
 .project-media img {
     width: 100%;
     height: auto;
@@ -654,7 +667,6 @@ body:not(.home-body) {
 
 /* =========================================
    MOBILE & TABLET ADJUSTMENTS 
-   (Responsive Formatting)
 ========================================= */
 
 /* Tablet & Smaller Laptops */
@@ -750,16 +762,16 @@ body:not(.home-body) {
         min-width: 100%;
     }
 
-    /* Project List Mobile */
-    .project-list {
-        gap: 60px;
+    /* Project Box Padding Fix for Mobile */
+    .project-info {
+        padding: 40px 30px; 
     }
 
-    .project-box h2 {
+    .project-info h2 {
         font-size: 2rem;
     }
 
-    .project-desc {
+    .project-info .project-desc {
         font-size: 1rem;
     }
 
