@@ -7,7 +7,7 @@
     --text-dark: #2b2b2b;
     --text-grey: #555555;
     --bg-light-grey: #e9e9e9; 
-    --bg-mid-grey: #C7C7C7; /* Updated exact Wix hex code */
+    --bg-mid-grey: #C7C7C7; 
 }
 
 * {
@@ -18,7 +18,7 @@
 }
 
 body {
-    background-color: #fff; 
+    background-color: #f4f4f4; 
     color: var(--text-dark);
     line-height: 1.6;
     -webkit-font-smoothing: antialiased;
@@ -110,17 +110,18 @@ body {
     flex: 1; 
     position: relative;
     display: flex;
-    justify-content: center; /* This removes the excess white space above the layout */
+    justify-content: center; 
     align-items: center;
     background-color: #fff;
 }
 
+/* Mathematically anchors the edge to always sit just inside the profile card */
 .grey-bg-block {
     position: absolute;
     left: 0;
     top: 0; 
     bottom: 0; 
-    width: 32%;
+    width: calc(50% - 220px); 
     background-color: var(--bg-mid-grey);
     z-index: 0;
 }
@@ -165,7 +166,7 @@ body {
     font-size: 32px;
     line-height: 1.2;
     margin-bottom: 20px;
-    font-weight: 800;
+    font-weight: 600;
     color: #000;
 }
 
@@ -277,7 +278,6 @@ body {
     text-align: left;
 }
 
-
 /* --- Global Footer --- */
 .main-footer {
     padding: 30px 60px;
@@ -300,10 +300,9 @@ body {
 .footer-col {
     display: flex;
     flex-direction: column;
-    gap: 8px; /* Slightly wider gap matching Wix layout */
+    gap: 8px; 
 }
 
-/* Set labels strictly to bold Avenir */
 .footer-label {
     font-family: 'Avenir', 'Nunito Sans', sans-serif;
     font-weight: bold;
@@ -343,7 +342,7 @@ body:not(.home-body) {
     display: block;
     height: auto;
     overflow: auto;
-    background-color: #f4f4f4; /* Ensures non-homepage bodies are grey */
+    background-color: #f4f4f4; 
 }
 
 .page-container {
@@ -591,297 +590,4 @@ body:not(.home-body) {
 
 .timeline-item {
     display: flex;
-    flex-wrap: wrap;
-    margin-bottom: 60px;
-    border-bottom: 1px solid #e0e0e0;
-    padding-bottom: 50px;
-}
-
-.timeline-item:last-child {
-    border-bottom: none;
-    margin-bottom: 0;
-    padding-bottom: 0;
-}
-
-.timeline-left {
-    flex: 1;
-    min-width: 250px;
-    padding-right: 40px;
-}
-
-.timeline-left h3 {
-    font-family: 'Poppins', sans-serif;
-    font-weight: 600;
-    font-size: 25px;
-    margin-bottom: 10px;
-    color: var(--wix-red);
-}
-
-.job-role {
-    font-family: 'Avenir', 'Nunito Sans', sans-serif;
-    font-weight: bold;
-    letter-spacing: 1px;
-    margin-bottom: 5px;
-    font-size: 15px;
-}
-
-.company {
-    color: #555;
-    margin-bottom: 10px;
-    font-style: italic;
-    font-size: 15px;
-}
-
-.job-type {
-    font-family: 'Avenir', 'Nunito Sans', sans-serif;
-    font-size: 13px;
-    color: #888;
-}
-
-.timeline-right {
-    flex: 2;
-    min-width: 350px;
-}
-
-.timeline-right p {
-    font-family: 'Avenir Light', 'Avenir', 'Nunito Sans', sans-serif;
-    font-weight: 300;
-    margin-bottom: 20px;
-    color: #333;
-    text-align: left;
-    font-size: 17px;
-    line-height: 1.5em;
-}
-
-.timeline-right .highlight {
-    font-style: italic;
-    font-size: 15px;
-    color: #666;
-    margin-top: 25px;
-    padding-left: 20px;
-    border-left: 3px solid var(--wix-red);
-}
-
-
-/* =========================================
-   LIGHTBOX MODAL
-========================================= */
-.lightbox {
-    display: none; 
-    position: fixed;
-    z-index: 9999;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.95);
-    align-items: center;
-    justify-content: center;
-}
-
-.lightbox-content-wrapper {
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    max-width: 90%;
-    max-height: 90%;
-}
-
-#lightbox-img {
-    max-width: 100%;
-    max-height: 90vh;
-    box-shadow: 0 0 20px rgba(0,0,0,0.8);
-    object-fit: contain;
-}
-
-.close-lightbox {
-    position: absolute;
-    top: 20px;
-    right: 40px;
-    color: #fff;
-    font-size: 45px;
-    font-weight: bold;
-    cursor: pointer;
-    z-index: 10000;
-    transition: color 0.3s ease;
-}
-
-.close-lightbox:hover {
-    color: var(--wix-red);
-}
-
-.nav-arrow {
-    background: none;
-    border: none;
-    color: white;
-    font-size: 3.5rem;
-    cursor: pointer;
-    padding: 0 20px;
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    transition: color 0.3s ease;
-}
-
-.nav-arrow:hover {
-    color: var(--wix-red);
-}
-
-.nav-arrow.prev {
-    left: -80px;
-}
-
-.nav-arrow.next {
-    right: -80px;
-}
-
-
-/* =========================================
-   MOBILE & TABLET ADJUSTMENTS 
-========================================= */
-
-@media (max-width: 1100px) {
-    .home-body {
-        height: auto;
-        overflow: auto;
-    }
-    
-    .grey-bg-block {
-        display: none;
-    }
-
-    .home-container {
-        flex-direction: column;
-        padding: 40px 20px;
-    }
-
-    .profile-card {
-        margin-left: 0;
-        margin-bottom: 40px;
-        width: 100%;
-        max-width: 500px;
-    }
-
-    .home-text {
-        padding-left: 0;
-        max-width: 100%;
-        text-align: center;
-    }
-}
-
-@media (max-width: 800px) {
-    .main-header {
-        flex-direction: column;
-        padding: 20px;
-        gap: 20px;
-        text-align: center;
-    }
-
-    .logo-container {
-        justify-content: center;
-        flex-wrap: wrap;
-    }
-
-    .main-nav {
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 15px;
-    }
-
-    .page-container {
-        padding: 0 20px;
-    }
-    
-    /* Project Box Mobile Override */
-    .project-box {
-        width: 100%;
-        height: auto;
-        flex-direction: column;
-    }
-
-    .project-media {
-        width: 100%;
-        height: 350px;
-        order: -1; 
-    }
-
-    .project-info {
-        padding: 40px 30px; 
-    }
-
-    /* Resume Timeline Mobile */
-    .timeline-item {
-        flex-direction: column;
-    }
-
-    .timeline-left {
-        padding-right: 0;
-        margin-bottom: 20px;
-    }
-
-    .timeline-right {
-        min-width: 100%;
-    }
-
-    /* Project Detail Mobile */
-    .project-gallery {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 15px;
-    }
-    
-    .project-gallery img {
-        height: 200px;
-    }
-    
-    .nav-arrow {
-        position: static;
-        transform: none;
-        padding: 10px;
-    }
-    
-    .lightbox-content-wrapper {
-        flex-direction: column;
-    }
-
-    /* Footer Mobile */
-    .main-footer {
-        flex-direction: column;
-        text-align: center;
-        padding: 40px 20px;
-        gap: 30px;
-    }
-    
-    .footer-right {
-        flex-direction: column;
-        gap: 20px;
-        align-items: center;
-    }
-}
-
-@media (max-width: 500px) {
-    .home-text h2 {
-        font-size: 4rem;
-    }
-
-    .home-text h3 {
-        font-size: 1.3rem;
-    }
-
-    .action-buttons {
-        flex-direction: column;
-        align-items: stretch;
-    }
-
-    .btn {
-        margin-bottom: 10px;
-    }
-
-    .project-gallery {
-        grid-template-columns: 1fr;
-    }
-
-    .project-gallery img {
-        height: 250px;
-    }
-}
+    flex
