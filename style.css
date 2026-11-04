@@ -2,7 +2,7 @@
    VARIABLES & GLOBAL RESETS
 ========================================= */
 :root {
-    --wix-red: #BC002D; /* Updated to precise Wix hex */
+    --wix-red: #BC002D; 
     --wix-red-hover: #960f21;
     --text-dark: #2b2b2b;
     --text-grey: #555555;
@@ -18,7 +18,7 @@
 }
 
 body {
-    background-color: #f4f4f4; /* Grey page background */
+    background-color: #f4f4f4; 
     color: var(--text-dark);
     line-height: 1.6;
     -webkit-font-smoothing: antialiased;
@@ -333,7 +333,7 @@ body:not(.home-body) {
 .page-container {
     max-width: 980px;
     margin: 60px auto 80px;
-    padding: 0 20px; /* Reduced outer padding */
+    padding: 0 20px; 
 }
 
 .page-header {
@@ -341,7 +341,6 @@ body:not(.home-body) {
     padding: 40px 0 60px;
 }
 
-/* Centered flex wrapper for title and square */
 .header-title-wrapper {
     display: flex;
     align-items: center;
@@ -356,6 +355,7 @@ body:not(.home-body) {
     background-color: var(--wix-red);
 }
 
+/* Specified: Poppins Semi-Bold 35px */
 .page-header h1 {
     font-family: 'Poppins', sans-serif;
     font-weight: 600;
@@ -364,8 +364,9 @@ body:not(.home-body) {
     margin-bottom: 0;
 }
 
+/* Specified: Avenir Light 17px, 1.5 line height */
 .intro-text {
-    font-family: 'Avenir Light', 'Nunito Sans', 'Helvetica Neue', Helvetica, sans-serif;
+    font-family: 'Avenir Light', 'Avenir', 'Nunito Sans', sans-serif;
     font-weight: 300;
     font-size: 17px;
     line-height: 1.5em;
@@ -395,59 +396,64 @@ body:not(.home-body) {
     box-shadow: 0 5px 25px rgba(0,0,0,0.06); 
     border-radius: 0; 
     overflow: hidden;
-    margin: 0 auto 60px; /* Even 60px spacing between boxes */
+    margin: 0 auto 60px; 
 }
 
-/* Text Container */
 .project-info {
-    flex: 1; /* Automatically takes the ~428px leftover width */
+    flex: 1; 
     padding: 50px 40px 40px 45px; 
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    position: relative; /* Anchor for the red tab flag */
+    position: relative; 
 }
 
-/* The Red Tab Flag */
 .project-info::before {
     content: '';
     position: absolute;
     left: 0;
-    top: 55px; /* Vertically aligns with the header & role text */
+    top: 55px; 
     width: 8px;
     height: 45px;
     background-color: var(--wix-red);
 }
 
+/* Specified: Poppins Semi-Bold 20px */
 .project-info h2 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
     font-size: 20px;
-    font-weight: bold;
     color: var(--wix-red);
     margin-bottom: 5px;
 }
 
+/* Specified: Avenir Regular 12px */
 .project-info .project-role {
-    font-weight: bold;
-    font-size: 14px;
+    font-family: 'Avenir', 'Nunito Sans', sans-serif;
+    font-weight: 400;
+    font-size: 12px;
     color: #000;
     margin-bottom: 25px;
 }
 
+/* Specified: Avenir Light 17px, 1.5 line height */
 .project-info .project-desc {
+    font-family: 'Avenir Light', 'Avenir', 'Nunito Sans', sans-serif;
+    font-weight: 300;
     font-size: 17px;
     color: #333;
     line-height: 1.5em;
     margin-bottom: 25px;
-    flex-grow: 1; /* Uses remaining space so button stays at natural position */
+    flex-grow: 1; 
 }
 
-/* Solid Red 'See More' Button */
 .project-info .btn-small {
     align-self: flex-start; 
     background-color: var(--wix-red);
     color: #ffffff;
     padding: 12px 35px;
     border-radius: 30px;
+    font-family: 'Avenir', 'Nunito Sans', sans-serif;
     font-weight: bold;
     font-size: 13px;
     letter-spacing: 1px;
@@ -464,7 +470,7 @@ body:not(.home-body) {
 .project-media {
     width: 322px; 
     height: 100%;
-    flex-shrink: 0; /* Prevents flexbox from squishing the image */
+    flex-shrink: 0; 
 }
 
 .project-media img {
@@ -501,11 +507,15 @@ body:not(.home-body) {
 
 .project-detail-header h1 {
     font-family: 'Poppins', sans-serif;
+    font-weight: 600;
     font-size: 35px;
     margin-bottom: 10px;
 }
 
 .project-detail-header .project-role {
+    font-family: 'Avenir', 'Nunito Sans', sans-serif;
+    font-weight: 400;
+    font-size: 12px;
     text-align: center;
     margin-bottom: 0;
 }
@@ -530,6 +540,8 @@ body:not(.home-body) {
 }
 
 .text-block p {
+    font-family: 'Avenir Light', 'Avenir', 'Nunito Sans', sans-serif;
+    font-weight: 300;
     margin-bottom: 25px;
     color: #333;
     font-size: 17px;
@@ -588,27 +600,29 @@ body:not(.home-body) {
 }
 
 .timeline-left h3 {
-    font-size: 1.8rem;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 25px;
     margin-bottom: 10px;
     color: var(--wix-red);
 }
 
 .job-role {
     font-weight: bold;
-    letter-spacing: 1.5px;
+    letter-spacing: 1px;
     margin-bottom: 5px;
-    font-size: 1.05rem;
+    font-size: 15px;
 }
 
 .company {
     color: #555;
     margin-bottom: 10px;
     font-style: italic;
-    font-size: 1.05rem;
+    font-size: 15px;
 }
 
 .job-type {
-    font-size: 0.9rem;
+    font-size: 13px;
     color: #888;
 }
 
@@ -618,16 +632,18 @@ body:not(.home-body) {
 }
 
 .timeline-right p {
+    font-family: 'Avenir Light', 'Avenir', 'Nunito Sans', sans-serif;
+    font-weight: 300;
     margin-bottom: 20px;
-    color: #444;
+    color: #333;
     text-align: left;
-    font-size: 1.05rem;
-    line-height: 1.8;
+    font-size: 17px;
+    line-height: 1.5em;
 }
 
 .timeline-right .highlight {
     font-style: italic;
-    font-size: 1rem;
+    font-size: 15px;
     color: #666;
     margin-top: 25px;
     padding-left: 20px;
@@ -707,6 +723,7 @@ body:not(.home-body) {
 .nav-arrow.next {
     right: -80px;
 }
+
 
 /* =========================================
    MOBILE & TABLET ADJUSTMENTS 
