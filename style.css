@@ -114,13 +114,13 @@ body {
     background-color: #fff;
 }
 
-/* The grey block now strictly spans the full height */
+/* Reduced width to 32% so it terminates underneath the profile card */
 .grey-bg-block {
     position: absolute;
     left: 0;
     top: 0; 
     bottom: 0; 
-    width: 45%;
+    width: 32%;
     background-color: var(--bg-mid-grey);
     z-index: 0;
 }
@@ -274,7 +274,7 @@ body {
     font-size: 17px;
     line-height: 1.5em;
     color: var(--text-grey);
-    text-align: left; /* Matched left alignment */
+    text-align: left;
 }
 
 /* --- Global Footer --- */
