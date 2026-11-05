@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Resume | Dayln Van Laanen</title>
-    <!-- Importing Poppins (Semi-Bold) and Nunito Sans (Fallback for Avenir) -->
     <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz,wght@6..12,300;6..12,400;6..12,700&family=Poppins:wght@600;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
@@ -12,11 +11,18 @@
     <header class="main-header">
         <div class="logo-container">
             <div class="red-square"></div>
-            <div class="site-title"><a href="index.html">DAYLN VAN LAANEN</a></div>
-            <div class="divider">/</div>
-            <div class="site-subtitle">UNIVERSITY PROGRAMS MANAGER</div>
+            <div class="title-group">
+                <div class="site-title"><a href="index.html">DAYLN VAN LAANEN</a></div>
+                <div class="divider">/</div>
+                <div class="site-subtitle">UNIVERSITY PROGRAMS MANAGER</div>
+            </div>
         </div>
+
+        <input type="checkbox" id="menu-toggle" class="menu-toggle">
+        <label for="menu-toggle" class="hamburger">&#9776;</label>
+
         <nav class="main-nav">
+            <label for="menu-toggle" class="close-menu">&times;</label>
             <a href="#" class="nav-lang">EN <span class="dropdown-arrow">&#711;</span></a>
             <a href="index.html">ABOUT ME</a>
             <a href="resume.html" class="active">RESUME</a>
@@ -26,7 +32,6 @@
     </header>
 
     <main class="resume-main">
-        <!-- Top Section (Light Grey Background) -->
         <div class="page-container">
             <div class="page-header">
                 <div class="header-title-wrapper">
@@ -35,21 +40,19 @@
                 </div>
             </div>
 
-            <!-- Experience Header & Download Button -->
             <div class="resume-sub-header">
                 <h2>Experience</h2>
-                <a href="#" class="btn-solid" target="_blank">DOWNLOAD CV</a>
+                <a href="#" class="btn-small" target="_blank">DOWNLOAD CV</a>
             </div>
 
             <div class="resume-list">
                 
-                <!-- Job 1 -->
                 <div class="resume-box">
                     <div class="resume-left">
                         <h3 class="resume-dates">2022- 2024</h3>
                         <p class="resume-role">UNIVERSITY PROGRAM<br>MANAGEMENT</p>
                         <p class="resume-company">Portland State University</p>
-                        <p class="resume-type">Full-time</p>
+                        <p class="degree-title">Full-time</p>
                     </div>
                     <div class="resume-right">
                         <p>At PSU, I initially joined as Program Support for the inaugural year of the <a href="https://asean.usmission.gov/young-southeast-asian-leaders-initiative/" class="red-link" target="_blank">Young Southeast Asian Leaders Initiative</a> (YSEALI). My responsibilities included aiding in the development and implementation of the program, coordinating logistics, supporting students, and ensuring the seamless execution of all program activities. These contributions were instrumental in establishing a robust foundation for the program's ongoing success.</p>
@@ -64,13 +67,12 @@
                     </div>
                 </div>
 
-                <!-- Job 2 -->
                 <div class="resume-box">
                     <div class="resume-left">
                         <h3 class="resume-dates">2020- 2022</h3>
                         <p class="resume-role">INTERNATIONAL PROGRAM<br>COORDINATION</p>
                         <p class="resume-company">University of Oregon: AEI</p>
-                        <p class="resume-type">Hourly / Full-time</p>
+                        <p class="degree-title">Hourly / Full-time</p>
                     </div>
                     <div class="resume-right">
                         <p>During my tenure at the <a href="https://aei.uoregon.edu/" class="red-link" target="_blank">American English Institute</a> (AEI), I played a pivotal role in adapting our educational programs to the challenges posed by the COVID-19 pandemic. Leading the transition from traditional in-person classes to dynamic digital platforms, I ensured that the quality and continuity of our programs remained uncompromised. By leveraging a range of virtual learning tools and methods, I successfully maintained high engagement levels among students and preserved the Institute's commitment to excellence in language education despite unprecedented disruptions.</p>
@@ -85,13 +87,12 @@
                     </div>
                 </div>
 
-                <!-- Job 3 -->
                 <div class="resume-box">
                     <div class="resume-left">
                         <h3 class="resume-dates">2018-2020</h3>
                         <p class="resume-role">DIGITAL MARKETING<br>EVENT PROMOTION / COORDINATION</p>
-                        <p class="resume-company"><a href="projects.html" class="red-link">Varied Companies</a></p>
-                        <p class="resume-type">Contracted / Full-time</p>
+                        <p class="resume-company">Varied Companies</p>
+                        <p class="degree-title">Contracted / Full-time</p>
                     </div>
                     <div class="resume-right">
                         <p>Crafted the online presence and digital communication of multiple institutions, such as the northwest's largest outdoor competitive event company <a href="https://www.breakawaypromotions.com/our-events" class="red-link" target="_blank">Breakaway Promotions</a> and Japan's outdoor gear and apparel company <a href="http://montbell.us" class="red-link" target="_blank">Montbell</a>.</p>
@@ -106,13 +107,12 @@
                     </div>
                 </div>
 
-                <!-- Job 4 -->
                 <div class="resume-box">
                     <div class="resume-left">
                         <h3 class="resume-dates">2016 - 2018</h3>
                         <p class="resume-role">WORKING ABROAD<br>EVENT COORDINATION</p>
-                        <p class="resume-company"><a href="seatosummit.html" class="red-link">Montbell (Japan)</a></p>
-                        <p class="resume-type">Contracted / Full-time</p>
+                        <p class="resume-company">Montbell (Japan)</p>
+                        <p class="degree-title">Contracted / Full-time</p>
                     </div>
                     <div class="resume-right">
                         <p>Montbell Co. Ltd. was established in Osaka, Japan with one goal in mind: produce high quality outdoor equipment. Since then the company has expanded its services and reach, covering much of Europe, Switzerland, and most recently the United States. With this expansion, Montbell was eager to raise awareness about their brand and products and wanted to do so by recreating their well established outdoor event series: <a href="https://www.seatosummit.jp/" class="red-link" target="_blank">Sea to Summit</a>. These events separate Montbell from its competitors by demonstrating their commitment to outdoor exploration and adventure for all.</p>
@@ -127,13 +127,12 @@
                     </div>
                 </div>
 
-                <!-- Job 5 -->
                 <div class="resume-box">
                     <div class="resume-left">
                         <h3 class="resume-dates">2015 - Current</h3>
                         <p class="resume-role">INTERNATIONAL PROGRAMS</p>
-                        <p class="resume-company"><a href="intl-programs.html" class="red-link">Varied Institutions</a></p>
-                        <p class="resume-type">Employed / Volunteer</p>
+                        <p class="resume-company">Varied Institutions</p>
+                        <p class="degree-title">Employed / Volunteer</p>
                     </div>
                     <div class="resume-right">
                         <p>I am a first generation student who has attended several different universities over the course of my studies, and in this process I have become extremely well versed on how to get the most out of the college experience. Although it may be too late for me to take advantage of much of this, I wish to share the knowledge I have acquired with students, especially those who might struggle within this system such as diverse international students. My experience abroad coupled with my understanding of all the difficulties that can come from unfamiliar and new environments has given me a unique skill set that can provide a benefit to international students.</p>
@@ -156,18 +155,15 @@
             </div>
         </div>
 
-        <!-- Bottom Section (Darker Grey Background) -->
         <div class="education-skills-wrapper">
             <div class="page-container edu-container">
                 
-                <!-- Education Section Header -->
                 <div class="resume-sub-header education-header">
                     <h2>Education</h2>
                 </div>
 
                 <div class="resume-list">
                     
-                    <!-- Education 1 -->
                     <div class="resume-box edu-box">
                         <div class="resume-left">
                             <h3 class="resume-dates">2020 - 2022</h3>
@@ -187,7 +183,6 @@
                         </div>
                     </div>
 
-                    <!-- Education 2 -->
                     <div class="resume-box edu-box">
                         <div class="resume-left">
                             <h3 class="resume-dates">2014 - 2017</h3>
@@ -204,7 +199,6 @@
                         </div>
                     </div>
 
-                    <!-- Education 3 -->
                     <div class="resume-box edu-box">
                         <div class="resume-left">
                             <h3 class="resume-dates">2011 - 2014</h3>
@@ -221,7 +215,6 @@
                         </div>
                     </div>
 
-                    <!-- Skills Box -->
                     <div class="resume-box skills-box">
                         <div class="skills-wrapper">
                             
