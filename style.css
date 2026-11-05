@@ -181,13 +181,13 @@ body {
     min-height: 0; 
 }
 
-/* Mathematically locked to the right edge of the 360px card in a 980px container */
+/* Mathematically locked to overlap halfway through the 360px card */
 .grey-bg-block {
     position: absolute;
     left: 0;
     top: 0; 
     bottom: 0; 
-    width: calc(50vw - 130px); 
+    width: calc(50vw - 310px); 
     background-color: var(--bg-mid-grey);
     z-index: 0;
 }
