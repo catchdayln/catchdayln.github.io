@@ -20,7 +20,7 @@ html {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-family: 'Helvetica Neue', Helvetica, Arial, 'Noto Sans JP', sans-serif;
 }
 
 body {
@@ -72,7 +72,7 @@ body {
 }
 
 .site-title a {
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Poppins', 'Noto Sans JP', sans-serif;
     font-weight: 800;
     font-size: 1.25rem;
     letter-spacing: 1px;
@@ -92,7 +92,7 @@ body {
 }
 
 .site-subtitle {
-    font-family: 'Avenir Light', 'Nunito Sans', sans-serif;
+    font-family: 'Avenir Light', 'Nunito Sans', 'Noto Sans JP', sans-serif;
     font-size: 14px;
     color: var(--text-grey);
     letter-spacing: 1.5px;
@@ -110,7 +110,7 @@ body {
 }
 
 .main-nav a {
-    font-family: 'Avenir', 'Nunito Sans', sans-serif;
+    font-family: 'Avenir', 'Nunito Sans', 'Noto Sans JP', sans-serif;
     text-decoration: none;
     color: #000;
     font-size: 13px;
@@ -222,7 +222,7 @@ body {
 }
 
 .card-top h1 {
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Poppins', 'Noto Sans JP', sans-serif;
     font-size: 32px;
     line-height: 1.2;
     margin-bottom: 20px;
@@ -238,7 +238,7 @@ body {
 }
 
 .job-title {
-    font-family: 'Avenir Light', 'Nunito Sans', sans-serif;
+    font-family: 'Avenir Light', 'Nunito Sans', 'Noto Sans JP', sans-serif;
     font-size: 13px;
     letter-spacing: 3px;
     color: #444;
@@ -268,7 +268,7 @@ body {
 }
 
 .home-text h2 {
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Poppins', 'Noto Sans JP', sans-serif;
     font-size: 90px;
     font-weight: 800;
     line-height: 1;
@@ -276,7 +276,7 @@ body {
 }
 
 .home-text h3 {
-    font-family: 'Avenir Light', 'Nunito Sans', sans-serif;
+    font-family: 'Avenir Light', 'Nunito Sans', 'Noto Sans JP', sans-serif;
     font-size: 26px;
     font-weight: 300;
     margin-bottom: 35px;
@@ -293,7 +293,7 @@ body {
     display: inline-block;
     padding: 10px 30px;
     border-radius: 30px;
-    font-family: 'Avenir', 'Nunito Sans', sans-serif;
+    font-family: 'Avenir', 'Nunito Sans', 'Noto Sans JP', sans-serif;
     font-weight: bold;
     font-size: 13px;
     letter-spacing: 1px;
@@ -307,7 +307,7 @@ body {
     color: #ffffff !important; 
     padding: 12px 35px;
     border-radius: 30px;
-    font-family: 'Avenir', 'Nunito Sans', sans-serif;
+    font-family: 'Avenir', 'Nunito Sans', 'Noto Sans JP', sans-serif;
     font-weight: bold;
     font-size: 13px;
     letter-spacing: 1px;
@@ -343,14 +343,14 @@ body {
 }
 
 .quote {
-    font-family: 'Avenir Light', 'Nunito Sans', sans-serif;
+    font-family: 'Avenir Light', 'Nunito Sans', 'Noto Sans JP', sans-serif;
     font-style: italic;
     font-size: 17px;
     margin-bottom: 25px;
 }
 
 .bio {
-    font-family: 'Avenir Light', 'Nunito Sans', sans-serif;
+    font-family: 'Avenir Light', 'Nunito Sans', 'Noto Sans JP', sans-serif;
     font-size: 17px;
     line-height: 1.5em;
     color: var(--text-grey);
@@ -364,7 +364,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    font-family: 'Avenir Light', 'Nunito Sans', sans-serif;
+    font-family: 'Avenir Light', 'Nunito Sans', 'Noto Sans JP', sans-serif;
     font-size: 14px;
     color: #000;
     z-index: 100;
@@ -383,7 +383,7 @@ body {
 }
 
 .footer-label {
-    font-family: 'Avenir', 'Nunito Sans', sans-serif;
+    font-family: 'Avenir', 'Nunito Sans', 'Noto Sans JP', sans-serif;
     font-weight: bold;
     font-size: 15px; 
     color: #000;
@@ -450,7 +450,7 @@ body:not(.home-body) {
 }
 
 .page-header h1 {
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Poppins', 'Noto Sans JP', sans-serif;
     font-weight: 600;
     font-size: 35px;
     color: #000;
@@ -458,7 +458,7 @@ body:not(.home-body) {
 }
 
 .intro-text {
-    font-family: 'Avenir Light', 'Avenir', 'Nunito Sans', sans-serif;
+    font-family: 'Avenir Light', 'Avenir', 'Nunito Sans', 'Noto Sans JP', sans-serif;
     font-weight: 300;
     font-size: 17px;
     line-height: 1.5em;
@@ -478,7 +478,7 @@ body:not(.home-body) {
 }
 
 .resume-anchors a {
-    font-family: 'Avenir', 'Nunito Sans', sans-serif;
+    font-family: 'Avenir', 'Nunito Sans', 'Noto Sans JP', sans-serif;
     font-size: 13px;
     font-weight: bold;
     color: #555;
@@ -534,7 +534,7 @@ body:not(.home-body) {
 }
 
 .project-info h2 {
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Poppins', 'Noto Sans JP', sans-serif;
     font-weight: 600;
     font-size: 20px;
     color: var(--wix-red);
@@ -542,7 +542,7 @@ body:not(.home-body) {
 }
 
 .project-info .project-role {
-    font-family: 'Avenir', 'Nunito Sans', sans-serif;
+    font-family: 'Avenir', 'Nunito Sans', 'Noto Sans JP', sans-serif;
     font-weight: 400;
     font-size: 12px;
     color: #000;
@@ -550,7 +550,7 @@ body:not(.home-body) {
 }
 
 .project-info .project-desc {
-    font-family: 'Avenir Light', 'Avenir', 'Nunito Sans', sans-serif;
+    font-family: 'Avenir Light', 'Avenir', 'Nunito Sans', 'Noto Sans JP', sans-serif;
     font-weight: 300;
     font-size: 17px;
     color: #333;
@@ -591,7 +591,7 @@ body:not(.home-body) {
     margin-bottom: 25px;
     text-decoration: none;
     color: #777;
-    font-family: 'Avenir', 'Nunito Sans', sans-serif;
+    font-family: 'Avenir', 'Nunito Sans', 'Noto Sans JP', sans-serif;
     font-size: 14px;
     font-weight: bold;
     letter-spacing: 1px;
@@ -603,14 +603,14 @@ body:not(.home-body) {
 }
 
 .project-detail-header h1 {
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Poppins', 'Noto Sans JP', sans-serif;
     font-weight: 600;
     font-size: 35px;
     margin-bottom: 10px;
 }
 
 .project-detail-header .project-role {
-    font-family: 'Avenir', 'Nunito Sans', sans-serif;
+    font-family: 'Avenir', 'Nunito Sans', 'Noto Sans JP', sans-serif;
     font-weight: 400;
     font-size: 12px;
     text-align: center;
@@ -637,7 +637,7 @@ body:not(.home-body) {
 }
 
 .text-block p {
-    font-family: 'Avenir Light', 'Avenir', 'Nunito Sans', sans-serif;
+    font-family: 'Avenir Light', 'Avenir', 'Nunito Sans', 'Noto Sans JP', sans-serif;
     font-weight: 300;
     margin-bottom: 25px;
     color: #333;
@@ -691,7 +691,7 @@ body:not(.home-body) {
 }
 
 .resume-sub-header h2 {
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Poppins', 'Noto Sans JP', sans-serif;
     font-weight: 600;
     font-size: 24px;
     color: #000;
@@ -731,7 +731,7 @@ body:not(.home-body) {
 }
 
 .resume-dates {
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Poppins', 'Noto Sans JP', sans-serif;
     font-weight: 600;
     font-size: 18px;
     color: var(--wix-red);
@@ -739,7 +739,7 @@ body:not(.home-body) {
 }
 
 .resume-role {
-    font-family: 'Avenir', 'Nunito Sans', sans-serif;
+    font-family: 'Avenir', 'Nunito Sans', 'Noto Sans JP', sans-serif;
     font-weight: 400;
     font-size: 13px;
     color: #000;
@@ -749,7 +749,7 @@ body:not(.home-body) {
 }
 
 .resume-company {
-    font-family: 'Avenir Light', 'Nunito Sans', sans-serif;
+    font-family: 'Avenir Light', 'Nunito Sans', 'Noto Sans JP', sans-serif;
     font-weight: 300;
     font-size: 13px;
     color: #555; 
@@ -760,7 +760,7 @@ body:not(.home-body) {
 }
 
 .degree-title {
-    font-family: 'Avenir Light', 'Nunito Sans', sans-serif;
+    font-family: 'Avenir Light', 'Nunito Sans', 'Noto Sans JP', sans-serif;
     font-style: italic;
     font-size: 13px;
     color: var(--wix-red);
@@ -772,7 +772,7 @@ body:not(.home-body) {
 }
 
 .resume-right p {
-    font-family: 'Avenir Light', 'Avenir', 'Nunito Sans', sans-serif;
+    font-family: 'Avenir Light', 'Avenir', 'Nunito Sans', 'Noto Sans JP', sans-serif;
     font-weight: 300;
     font-size: 17px;
     line-height: 1.5em;
@@ -804,7 +804,7 @@ body:not(.home-body) {
 }
 
 .resume-bullet-list li {
-    font-family: 'Avenir Light', 'Avenir', 'Nunito Sans', sans-serif;
+    font-family: 'Avenir Light', 'Avenir', 'Nunito Sans', 'Noto Sans JP', sans-serif;
     font-weight: 300;
     font-size: 17px;
     line-height: 1.5em;
@@ -825,7 +825,7 @@ body:not(.home-body) {
 }
 
 .resume-highlight p {
-    font-family: 'Avenir Light', 'Avenir', 'Nunito Sans', sans-serif;
+    font-family: 'Avenir Light', 'Avenir', 'Nunito Sans', 'Noto Sans JP', sans-serif;
     font-style: italic;
     font-size: 15px;
     color: #555;
@@ -842,7 +842,7 @@ body:not(.home-body) {
 }
 
 .skills-wrapper h2 {
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Poppins', 'Noto Sans JP', sans-serif;
     font-weight: 600;
     font-size: 24px;
     color: #000;
@@ -869,7 +869,7 @@ body:not(.home-body) {
 }
 
 .skills-grid li {
-    font-family: 'Avenir Light', 'Nunito Sans', sans-serif;
+    font-family: 'Avenir Light', 'Nunito Sans', 'Noto Sans JP', sans-serif;
     font-weight: 300;
     font-size: 15px;
     color: #333;
@@ -1035,7 +1035,7 @@ body:not(.home-body) {
     }
     
     .main-nav a {
-        font-family: 'Poppins', sans-serif;
+        font-family: 'Poppins', 'Noto Sans JP', sans-serif;
         font-size: 22px;
         font-weight: 800;
         color: #555;
