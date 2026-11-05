@@ -18,7 +18,7 @@
 }
 
 body {
-    background-color: #f4f4f4; 
+    background-color: #fff; 
     color: var(--text-dark);
     line-height: 1.6;
     -webkit-font-smoothing: antialiased;
@@ -51,10 +51,16 @@ body {
     gap: 12px;
 }
 
+.title-group {
+    display: flex;
+    align-items: center;
+}
+
 .red-square {
     width: 14px;
     height: 14px;
     background-color: var(--wix-red);
+    flex-shrink: 0;
 }
 
 .site-title a {
@@ -74,7 +80,7 @@ body {
 .divider {
     color: #000;
     font-weight: 300;
-    margin: 0 5px;
+    margin: 0 8px;
 }
 
 .site-subtitle {
@@ -83,6 +89,11 @@ body {
     color: var(--text-grey);
     letter-spacing: 1.5px;
     font-weight: 300;
+}
+
+/* Hidden elements for desktop */
+.menu-toggle, .hamburger, .close-menu {
+    display: none;
 }
 
 .main-nav {
@@ -574,17 +585,24 @@ body:not(.home-body) {
     transition: opacity 0.2s ease, transform 0.2s ease;
 }
 
-.project-gallery img:hover {
-    opacity: 0.85;
-    transform: scale(0.98);
-}
-
 
 /* =========================================
    RESUME LAYOUT
 ========================================= */
 
-/* Resume Sub-Header Wrapper (Experience & Button) */
+/* Full-width dark grey background for bottom section */
+.education-skills-wrapper {
+    background-color: var(--bg-mid-grey); 
+    width: 100%;
+    padding: 60px 0 20px 0;
+}
+
+/* Reusable inner container override so we don't double up margins */
+.edu-container {
+    margin-top: 0 !important; 
+    margin-bottom: 0 !important;
+}
+
 .resume-sub-header {
     width: 750px;
     margin: 0 auto 30px;
@@ -600,13 +618,11 @@ body:not(.home-body) {
     color: #000;
 }
 
-/* For sub-headers that do not have a button */
-.resume-sub-header.education-header {
+.education-header {
     justify-content: flex-start; 
     margin-top: 20px; 
 }
 
-/* Resume Boundary Box (Matches 750px Project Box) */
 .resume-list {
     display: flex;
     flex-direction: column;
@@ -635,7 +651,6 @@ body:not(.home-body) {
     flex: 1;
 }
 
-/* Resume Left Column Typography */
 .resume-dates {
     font-family: 'Poppins', sans-serif;
     font-weight: 600;
@@ -665,7 +680,6 @@ body:not(.home-body) {
     color: #000 !important;
 }
 
-/* The degree title pushed to the bottom of the left column */
 .degree-title {
     font-family: 'Avenir Light', 'Nunito Sans', sans-serif;
     font-style: italic;
@@ -677,7 +691,6 @@ body:not(.home-body) {
     font-weight: bold;
 }
 
-/* Resume Right Column Typography */
 .resume-right p {
     font-family: 'Avenir Light', 'Avenir', 'Nunito Sans', sans-serif;
     font-weight: 300;
@@ -705,7 +718,6 @@ body:not(.home-body) {
     color: var(--wix-red-hover);
 }
 
-/* Bullet list inside description */
 .resume-bullet-list {
     margin-left: 20px;
     margin-bottom: 25px;
@@ -724,12 +736,10 @@ body:not(.home-body) {
     color: var(--wix-red);
 }
 
-/* Margin helper for paragraph spacing */
 .mt-15 {
     margin-top: 15px;
 }
 
-/* Highlight section at bottom of right column */
 .resume-highlight {
     margin-top: 35px;
 }
@@ -759,7 +769,6 @@ body:not(.home-body) {
     margin-bottom: 30px;
 }
 
-/* Bulletproof CSS resets specifically for the skills grid */
 .skills-grid {
     display: grid !important;
     grid-template-columns: repeat(3, 1fr);
@@ -786,10 +795,9 @@ body:not(.home-body) {
     color: #333;
     display: flex;
     align-items: center;
-    list-style-type: none !important; /* Forces the browser to strip the black disc */
+    list-style-type: none !important; 
 }
 
-/* Red Square Bullet Point */
 .skills-grid li::before {
     content: '';
     display: inline-block;
@@ -845,35 +853,6 @@ body:not(.home-body) {
     transition: color 0.3s ease;
 }
 
-.close-lightbox:hover {
-    color: var(--wix-red);
-}
-
-.nav-arrow {
-    background: none;
-    border: none;
-    color: white;
-    font-size: 3.5rem;
-    cursor: pointer;
-    padding: 0 20px;
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    transition: color 0.3s ease;
-}
-
-.nav-arrow:hover {
-    color: var(--wix-red);
-}
-
-.nav-arrow.prev {
-    left: -80px;
-}
-
-.nav-arrow.next {
-    right: -80px;
-}
-
 
 /* =========================================
    MOBILE & TABLET ADJUSTMENTS 
@@ -886,7 +865,7 @@ body:not(.home-body) {
     }
     
     .grey-bg-block {
-        display: none;
+        display: none; /* Removed grey background wrapper for mobile home */
     }
 
     .home-container {
@@ -908,30 +887,91 @@ body:not(.home-body) {
     }
 }
 
+/* Core Mobile Breakpoint (Phones and small tablets) */
 @media (max-width: 800px) {
+    
+    /* MOBILE HEADER & HAMBURGER MENU */
     .main-header {
-        flex-direction: column;
+        flex-direction: row;
         padding: 20px;
-        gap: 20px;
-        text-align: center;
+        position: relative;
     }
 
     .logo-container {
-        justify-content: center;
-        flex-wrap: wrap;
-    }
-
-    .main-nav {
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 15px;
-    }
-
-    .page-container {
-        padding: 0 20px;
+        align-items: flex-start;
     }
     
-    /* Project Box Mobile Override */
+    /* Stacks title and subtitle on mobile */
+    .title-group {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .site-title a {
+        font-size: 1.1rem;
+    }
+    
+    .site-subtitle {
+        font-size: 11px;
+    }
+
+    .divider {
+        display: none; /* Hides slash on mobile */
+    }
+
+    /* Activating the pure CSS Hamburger Menu */
+    .hamburger {
+        display: block;
+        font-size: 30px;
+        color: #000;
+        cursor: pointer;
+    }
+    
+    .close-menu {
+        display: block;
+        position: absolute;
+        top: 20px;
+        right: 25px;
+        font-size: 40px;
+        color: #555;
+        cursor: pointer;
+    }
+
+    /* Off-screen overlay menu */
+    .main-nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background-color: #f4eee7; /* Warm off-white from your screenshot */
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        z-index: 1000;
+        transform: translateY(-100%);
+        transition: transform 0.3s ease-in-out;
+        gap: 30px;
+    }
+
+    .menu-toggle:checked ~ .main-nav {
+        transform: translateY(0);
+    }
+    
+    .main-nav a {
+        font-family: 'Poppins', sans-serif;
+        font-size: 22px;
+        font-weight: 800;
+        color: #555;
+    }
+
+    /* Container and Layout Adjustments */
+    .page-container {
+        padding: 0 15px;
+    }
+    
+    /* MOBILE PROJECTS LIST */
     .project-box {
         width: 100%;
         height: auto;
@@ -940,59 +980,63 @@ body:not(.home-body) {
 
     .project-media {
         width: 100%;
-        height: 350px;
-        order: -1; 
+        height: 250px;
+        order: -1; /* Pushes image to the top */
     }
 
     .project-info {
-        padding: 40px 30px; 
+        padding: 30px 20px; 
+    }
+    
+    .project-info::before {
+        top: 35px; /* Adjusts red tab flag for mobile */
     }
 
-    /* Resume Timeline Mobile */
+    /* MOBILE RESUME LIST */
     .resume-sub-header {
         width: 100%;
         flex-direction: column;
-        gap: 20px;
+        gap: 15px;
         text-align: center;
     }
 
     .resume-box {
         width: 100%;
         flex-direction: column;
-        padding: 40px 30px;
+        padding: 30px 20px;
+        margin-bottom: 40px;
     }
 
     .resume-left {
-        flex: auto;
+        flex: none;
+        width: 100%;
         padding-right: 0;
-        margin-bottom: 25px;
+        margin-bottom: 20px;
+    }
+    
+    .resume-right p {
+        font-size: 15px; /* Slightly smaller text for readability */
+    }
+    
+    .degree-title {
+        margin-top: 10px;
     }
     
     /* Skills Box Mobile */
     .skills-grid {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: 1fr !important; /* Forces single column */
     }
 
     /* Project Detail Mobile */
     .project-gallery {
         grid-template-columns: repeat(2, 1fr);
-        gap: 15px;
+        gap: 10px;
     }
     
     .project-gallery img {
-        height: 200px;
+        height: 150px;
     }
     
-    .nav-arrow {
-        position: static;
-        transform: none;
-        padding: 10px;
-    }
-    
-    .lightbox-content-wrapper {
-        flex-direction: column;
-    }
-
     /* Footer Mobile */
     .main-footer {
         flex-direction: column;
@@ -1010,11 +1054,11 @@ body:not(.home-body) {
 
 @media (max-width: 500px) {
     .home-text h2 {
-        font-size: 4rem;
+        font-size: 3rem;
     }
 
     .home-text h3 {
-        font-size: 1.3rem;
+        font-size: 1.2rem;
     }
 
     .action-buttons {
@@ -1025,16 +1069,8 @@ body:not(.home-body) {
     .btn {
         margin-bottom: 10px;
     }
-    
-    .skills-grid {
-        grid-template-columns: 1fr;
-    }
 
     .project-gallery {
         grid-template-columns: 1fr;
-    }
-
-    .project-gallery img {
-        height: 250px;
     }
 }
