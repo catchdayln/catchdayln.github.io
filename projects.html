@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Projects | Dayln Van Laanen</title>
-    <!-- Importing Poppins (Semi-Bold) and Nunito Sans (Fallback for Avenir) -->
     <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz,wght@6..12,300;6..12,400&family=Poppins:wght@600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
@@ -12,11 +11,18 @@
     <header class="main-header">
         <div class="logo-container">
             <div class="red-square"></div>
-            <div class="site-title"><a href="index.html">DAYLN VAN LAANEN</a></div>
-            <div class="divider">/</div>
-            <div class="site-subtitle">UNIVERSITY PROGRAMS MANAGER</div>
+            <div class="title-group">
+                <div class="site-title"><a href="index.html">DAYLN VAN LAANEN</a></div>
+                <div class="divider">/</div>
+                <div class="site-subtitle">UNIVERSITY PROGRAMS MANAGER</div>
+            </div>
         </div>
+
+        <input type="checkbox" id="menu-toggle" class="menu-toggle">
+        <label for="menu-toggle" class="hamburger">&#9776;</label>
+
         <nav class="main-nav">
+            <label for="menu-toggle" class="close-menu">&times;</label>
             <a href="#" class="nav-lang">EN <span class="dropdown-arrow">&#711;</span></a>
             <a href="index.html">ABOUT ME</a>
             <a href="resume.html">RESUME</a>
@@ -36,7 +42,6 @@
 
         <div class="project-list">
             
-            <!-- Project 1: EMPA -->
             <div class="project-box">
                 <div class="project-info">
                     <h2>Executive MPA</h2>
@@ -49,7 +54,6 @@
                 </div>
             </div>
 
-            <!-- Project 2: YSEALI -->
             <div class="project-box">
                 <div class="project-info">
                     <h2>YSEALI</h2>
@@ -62,7 +66,6 @@
                 </div>
             </div>
 
-            <!-- Project 3: AEI -->
             <div class="project-box">
                 <div class="project-info">
                     <h2>American English Institute</h2>
@@ -75,7 +78,6 @@
                 </div>
             </div>
 
-            <!-- Project 4: Breakaway -->
             <div class="project-box">
                 <div class="project-info">
                     <h2>Breakaway Promotions</h2>
@@ -88,7 +90,6 @@
                 </div>
             </div>
 
-            <!-- Project 5: Sea to Summit -->
             <div class="project-box">
                 <div class="project-info">
                     <h2>Sea to Summit</h2>
@@ -101,7 +102,6 @@
                 </div>
             </div>
 
-            <!-- Project 6: International Programs -->
             <div class="project-box">
                 <div class="project-info">
                     <h2>International Programs</h2>
@@ -114,7 +114,6 @@
                 </div>
             </div>
 
-            <!-- Project 7: YouTube -->
             <div class="project-box">
                 <div class="project-info">
                     <h2>Japanese YouTube Series</h2>
@@ -127,7 +126,6 @@
                 </div>
             </div>
 
-            <!-- Project 8: Graphics -->
             <div class="project-box">
                 <div class="project-info">
                     <h2>Graphics & Logos</h2>
@@ -140,7 +138,6 @@
                 </div>
             </div>
 
-            <!-- Project 9: Elijah Dash -->
             <div class="project-box">
                 <div class="project-info">
                     <h2>Elijah Dash</h2>
@@ -153,7 +150,6 @@
                 </div>
             </div>
             
-            <!-- Project 10: Product Advantage -->
             <div class="project-box">
                 <div class="project-info">
                     <h2>Product Advantage</h2>
@@ -166,7 +162,6 @@
                 </div>
             </div>
 
-            <!-- Project 11: Festivals -->
             <div class="project-box">
                 <div class="project-info">
                     <h2>Beer & Wine Festivals</h2>
@@ -193,7 +188,7 @@
             </div>
             <div class="footer-col">
                 <span class="footer-label">URL</span>
-                <a href="https://catchdayln.github.io">dayln.info</a>
+                <a href="https://catchdayln.com">catchdayln.com</a>
             </div>
             <div class="footer-col">
                 <span class="footer-label">Follow</span>
