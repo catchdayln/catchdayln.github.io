@@ -144,7 +144,6 @@ body {
     text-align: center;
 }
 
-/* Show the menu when hovering over the parent wrapper */
 .lang-dropdown:hover .lang-menu {
     display: flex;
     flex-direction: column;
@@ -170,7 +169,7 @@ body {
     position: relative;
     display: flex;
     justify-content: center; 
-    align-items: center;
+    align-items: stretch; /* Forces children to stretch to the header and footer */
     background-color: #fff;
 }
 
@@ -179,7 +178,7 @@ body {
     left: 0;
     top: 0; 
     bottom: 0; 
-    width: calc(50vw - 160px); 
+    width: calc(50vw - 140px); /* Mathematically locked to the right edge of the card */
     background-color: var(--bg-mid-grey);
     z-index: 0;
 }
@@ -190,9 +189,10 @@ body {
     display: flex;
     width: 100%;
     max-width: 1000px;
+    height: 100%;
     margin: 0 auto;
     justify-content: center;
-    align-items: center;
+    align-items: center; /* Centers the content vertically */
     gap: 80px; 
 }
 
