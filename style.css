@@ -177,30 +177,31 @@ body {
     justify-content: center; 
     align-items: center; 
     background-color: #fff;
+    width: 100%;
     min-height: 0; 
 }
 
-/* Mathematically locked to the right edge of the card */
+/* Mathematically locked to the right edge of the 360px card in a 980px container */
 .grey-bg-block {
     position: absolute;
     left: 0;
     top: 0; 
     bottom: 0; 
-    width: calc(50vw - 70px); 
+    width: calc(50vw - 130px); 
     background-color: var(--bg-mid-grey);
     z-index: 0;
 }
 
-/* Center Container Fix: Removed 100% width and forced absolute centered margins */
+/* 980px container, space-between restores the elegant asymmetric gap */
 .home-container {
     position: relative;
     z-index: 10;
     display: flex;
-    max-width: 860px;
+    width: 100%;
+    max-width: 980px;
     margin: 0 auto; 
-    justify-content: center;
+    justify-content: space-between; 
     align-items: center; 
-    gap: 40px; 
 }
 
 /* Overlapping Card */
@@ -268,11 +269,11 @@ body {
     color: var(--wix-red);
 }
 
-/* Tighter text block width so it clusters with the card instead of floating to the right */
+/* Text block restored to proper width */
 .home-text {
-    width: 460px; 
+    width: 520px; 
     flex-shrink: 0; 
-    margin-top: 30px; 
+    margin-top: 10px; 
 }
 
 .home-text h2 {
