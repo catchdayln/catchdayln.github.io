@@ -169,32 +169,32 @@ body {
     position: relative;
     display: flex;
     justify-content: center; 
-    align-items: stretch; 
+    align-items: center; /* Locks the inner container strictly to the vertical center */
     background-color: #fff;
 }
 
-/* Mathematically locked to the right edge of the 360px card in an 890px centered container */
+/* Mathematically locked to the right edge of the 360px card in an 860px centered container */
 .grey-bg-block {
     position: absolute;
     left: 0;
     top: 0; 
     bottom: 0; 
-    width: calc(50vw - 85px); 
+    width: calc(50vw - 70px); 
     background-color: var(--bg-mid-grey);
     z-index: 0;
 }
 
-/* Tighter 890px container to pull the text block closer to the profile card */
+/* Tighter 860px container to pull the text block cleanly away from the right edge */
 .home-container {
     position: relative;
     z-index: 10;
     display: flex;
     width: 100%;
-    max-width: 890px;
+    max-width: 860px;
     margin: 0 auto;
     justify-content: center;
     align-items: center; 
-    gap: 50px; 
+    gap: 40px; 
 }
 
 /* Overlapping Card */
@@ -264,8 +264,9 @@ body {
 
 /* Tighter text block width so it clusters with the card instead of floating to the right */
 .home-text {
-    width: 480px; 
+    width: 460px; 
     flex-shrink: 0; 
+    margin-top: 30px; /* Nudges the block down so the "Hello" perfectly aligns with the headshot */
 }
 
 .home-text h2 {
@@ -964,6 +965,7 @@ body:not(.home-body) {
         width: 100%;
         max-width: 100%;
         text-align: center;
+        margin-top: 0; 
     }
 }
 
