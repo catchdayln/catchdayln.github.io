@@ -169,31 +169,32 @@ body {
     position: relative;
     display: flex;
     justify-content: center; 
-    align-items: stretch; /* Forces children to stretch to the header and footer */
+    align-items: center; 
     background-color: #fff;
 }
 
+/* Hard-locked formula so the background always perfectly cuts off behind the profile card */
 .grey-bg-block {
     position: absolute;
     left: 0;
     top: 0; 
     bottom: 0; 
-    width: calc(50vw - 140px); /* Mathematically locked to the right edge of the card */
+    width: calc(50vw - 120px); 
     background-color: var(--bg-mid-grey);
     z-index: 0;
 }
 
+/* Hard-locked 1000px container to prevent wide-screen blowout */
 .home-container {
     position: relative;
     z-index: 10;
     display: flex;
     width: 100%;
     max-width: 1000px;
-    height: 100%;
     margin: 0 auto;
     justify-content: center;
-    align-items: center; /* Centers the content vertically */
-    gap: 80px; 
+    align-items: center;
+    gap: 60px; 
 }
 
 /* Overlapping Card */
@@ -261,9 +262,10 @@ body {
     color: var(--wix-red);
 }
 
-/* Right Side Text Block */
+/* Right Side Text Block tightly bounded so it doesn't stretch right */
 .home-text {
-    width: 560px; 
+    flex: 1;
+    max-width: 540px; 
     flex-shrink: 0; 
 }
 
@@ -750,417 +752,4 @@ body:not(.home-body) {
 
 .resume-company {
     font-family: 'Avenir Light', 'Nunito Sans', 'Noto Sans JP', sans-serif;
-    font-weight: 300;
-    font-size: 13px;
-    color: #555; 
-}
-
-.text-black {
-    color: #000 !important;
-}
-
-.degree-title {
-    font-family: 'Avenir Light', 'Nunito Sans', 'Noto Sans JP', sans-serif;
-    font-style: italic;
-    font-size: 13px;
-    color: var(--wix-red);
-    margin-top: auto; 
-}
-
-.degree-title span {
-    font-weight: bold;
-}
-
-.resume-right p {
-    font-family: 'Avenir Light', 'Avenir', 'Nunito Sans', 'Noto Sans JP', sans-serif;
-    font-weight: 300;
-    font-size: 17px;
-    line-height: 1.5em;
-    color: #333;
-    margin-bottom: 25px;
-    text-align: left;
-}
-
-.resume-right p:last-child {
-    margin-bottom: 0;
-}
-
-.red-link {
-    color: var(--wix-red);
-    text-decoration: underline;
-}
-
-.red-link.bold {
-    font-weight: bold;
-}
-
-.red-link:hover {
-    color: var(--wix-red-hover);
-}
-
-.resume-bullet-list {
-    margin-left: 20px;
-    margin-bottom: 25px;
-}
-
-.resume-bullet-list li {
-    font-family: 'Avenir Light', 'Avenir', 'Nunito Sans', 'Noto Sans JP', sans-serif;
-    font-weight: 300;
-    font-size: 17px;
-    line-height: 1.5em;
-    color: #333;
-    margin-bottom: 5px;
-}
-
-.resume-bullet-list li::marker {
-    color: var(--wix-red);
-}
-
-.mt-15 {
-    margin-top: 15px;
-}
-
-.resume-highlight {
-    margin-top: 35px;
-}
-
-.resume-highlight p {
-    font-family: 'Avenir Light', 'Avenir', 'Nunito Sans', 'Noto Sans JP', sans-serif;
-    font-style: italic;
-    font-size: 15px;
-    color: #555;
-    margin-bottom: 0;
-}
-
-/* --- Skills Layout --- */
-.skills-box {
-    padding: 60px 45px;
-}
-
-.skills-wrapper {
-    width: 100%;
-}
-
-.skills-wrapper h2 {
-    font-family: 'Poppins', 'Noto Sans JP', sans-serif;
-    font-weight: 600;
-    font-size: 24px;
-    color: #000;
-    margin-bottom: 30px;
-}
-
-.skills-grid {
-    display: grid !important;
-    grid-template-columns: repeat(3, 1fr);
-    row-gap: 25px;
-    column-gap: 20px;
-    padding-left: 0 !important;
-    margin-top: 0;
-    margin-bottom: 60px;
-    list-style: none !important; 
-}
-
-.skills-grid.two-col {
-    grid-template-columns: repeat(2, 1fr);
-}
-
-.skills-wrapper ul:last-child {
-    margin-bottom: 0;
-}
-
-.skills-grid li {
-    font-family: 'Avenir Light', 'Nunito Sans', 'Noto Sans JP', sans-serif;
-    font-weight: 300;
-    font-size: 15px;
-    color: #333;
-    display: flex;
-    align-items: center;
-    list-style-type: none !important; 
-}
-
-.skills-grid li::before {
-    content: '';
-    display: inline-block;
-    width: 12px;
-    height: 12px;
-    background-color: var(--wix-red);
-    margin-right: 15px;
-    flex-shrink: 0;
-}
-
-
-/* =========================================
-   LIGHTBOX MODAL
-========================================= */
-.lightbox {
-    display: none; 
-    position: fixed;
-    z-index: 9999;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.95);
-    align-items: center;
-    justify-content: center;
-}
-
-.lightbox-content-wrapper {
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    max-width: 90%;
-    max-height: 90%;
-}
-
-#lightbox-img {
-    max-width: 100%;
-    max-height: 90vh;
-    box-shadow: 0 0 20px rgba(0,0,0,0.8);
-    object-fit: contain;
-}
-
-.close-lightbox {
-    position: absolute;
-    top: 20px;
-    right: 40px;
-    color: #fff;
-    font-size: 45px;
-    font-weight: bold;
-    cursor: pointer;
-    z-index: 10000;
-    transition: color 0.3s ease;
-}
-
-
-/* =========================================
-   MOBILE & TABLET ADJUSTMENTS 
-========================================= */
-
-@media (max-width: 1100px) {
-    .home-body {
-        height: auto;
-        overflow: auto;
-    }
-    
-    .grey-bg-block {
-        display: none; 
-    }
-
-    .home-container {
-        flex-direction: column;
-        padding: 40px 20px;
-        gap: 40px; 
-    }
-
-    .profile-card {
-        width: 100%;
-        max-width: 500px;
-    }
-
-    .home-text {
-        width: 100%;
-        max-width: 100%;
-        text-align: center;
-    }
-}
-
-@media (max-width: 800px) {
-    
-    /* MOBILE HEADER & HAMBURGER MENU */
-    .main-header {
-        flex-direction: row;
-        padding: 20px;
-        position: relative;
-    }
-
-    .logo-container {
-        align-items: flex-start;
-    }
-    
-    .title-group {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-    }
-    
-    .site-title a {
-        font-size: 1.1rem;
-    }
-    
-    .site-subtitle {
-        font-size: 11px;
-    }
-
-    .divider {
-        display: none; 
-    }
-
-    .hamburger {
-        display: block;
-        font-size: 30px;
-        color: #000;
-        cursor: pointer;
-    }
-    
-    .close-menu {
-        display: block;
-        position: absolute;
-        top: 20px;
-        right: 25px;
-        font-size: 40px;
-        color: #555;
-        cursor: pointer;
-    }
-
-    .main-nav {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100vh;
-        background-color: #f4eee7; 
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        z-index: 1000;
-        transform: translateY(-100%);
-        transition: transform 0.3s ease-in-out;
-        gap: 30px;
-    }
-
-    .menu-toggle:checked ~ .main-nav {
-        transform: translateY(0);
-    }
-    
-    .main-nav a {
-        font-family: 'Poppins', 'Noto Sans JP', sans-serif;
-        font-size: 22px;
-        font-weight: 800;
-        color: #555;
-    }
-
-    /* Override Language Dropdown for Mobile */
-    .lang-menu {
-        position: static;
-        transform: none;
-        box-shadow: none;
-        background-color: transparent;
-        margin-top: 10px;
-    }
-    
-    .lang-dropdown:hover .lang-menu,
-    .lang-dropdown:focus-within .lang-menu {
-        display: flex;
-        align-items: center;
-    }
-
-    /* Container Adjustments */
-    .page-container {
-        padding: 0 15px;
-    }
-    
-    /* MOBILE PROJECTS LIST */
-    .project-box {
-        width: 100%;
-        height: auto;
-        flex-direction: column;
-    }
-
-    .project-media {
-        width: 100%;
-        height: 250px;
-        order: -1; 
-    }
-
-    .project-info {
-        padding: 30px 20px; 
-    }
-    
-    .project-info::before {
-        top: 35px; 
-    }
-
-    /* MOBILE RESUME LIST */
-    .resume-sub-header {
-        width: 100%;
-        flex-direction: column;
-        gap: 15px;
-        text-align: center;
-    }
-
-    .resume-box {
-        width: 100%;
-        flex-direction: column;
-        padding: 30px 20px;
-        margin-bottom: 40px;
-    }
-
-    .resume-left {
-        flex: none;
-        width: 100%;
-        padding-right: 0;
-        margin-bottom: 20px;
-    }
-    
-    .resume-right p {
-        font-size: 15px; 
-    }
-    
-    .degree-title {
-        margin-top: 10px;
-    }
-    
-    /* Skills Box Mobile */
-    .skills-grid {
-        grid-template-columns: 1fr !important; 
-    }
-
-    /* Project Detail Mobile */
-    .project-gallery {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 10px;
-    }
-    
-    .project-gallery img {
-        height: 150px;
-    }
-    
-    /* Footer Mobile */
-    .main-footer {
-        flex-direction: column;
-        text-align: center;
-        padding: 40px 20px;
-        gap: 30px;
-    }
-    
-    .footer-right {
-        flex-direction: column;
-        gap: 20px;
-        align-items: center;
-    }
-}
-
-@media (max-width: 500px) {
-    .home-text h2 {
-        font-size: 3rem;
-    }
-
-    .home-text h3 {
-        font-size: 1.2rem;
-    }
-
-    .action-buttons {
-        flex-direction: column;
-        align-items: stretch;
-    }
-
-    .btn {
-        margin-bottom: 10px;
-    }
-
-    .project-gallery {
-        grid-template-columns: 1fr;
-    }
-}
+    font-weight
