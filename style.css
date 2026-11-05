@@ -187,7 +187,7 @@ body {
     left: 0;
     top: 0; 
     bottom: 0; 
-    width: calc(50vw - 250px); 
+    width: calc(50vw - 220px); 
     background-color: var(--bg-mid-grey);
     z-index: 0;
 }
