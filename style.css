@@ -10,12 +10,19 @@
     --bg-mid-grey: #C7C7C7; 
 }
 
-/* Enables smooth sliding for anchor links and pads the scroll so the sticky header doesn't cover content */
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    overflow-x: hidden; /* Prevents ANY horizontal browser blowouts */
+}
+
 html {
     scroll-behavior: smooth;
     scroll-padding-top: 130px; 
 }
 
+/* THE CRITICAL TYPO FIX: This must be an asterisk (*), not a hyphen (-) */
 * {
     box-sizing: border-box;
     margin: 0;
@@ -169,8 +176,10 @@ body {
     position: relative;
     display: flex;
     justify-content: center; 
-    align-items: center; /* Locks the inner container strictly to the vertical center */
+    align-items: center; 
     background-color: #fff;
+    width: 100%;
+    min-height: 0; /* Prevents Safari flexbox blowout bugs */
 }
 
 /* Mathematically locked to the right edge of the 360px card in an 860px centered container */
@@ -191,7 +200,7 @@ body {
     display: flex;
     width: 100%;
     max-width: 860px;
-    margin: 0 auto;
+    margin: auto; /* Forces absolute vertical & horizontal centering */
     justify-content: center;
     align-items: center; 
     gap: 40px; 
@@ -266,7 +275,7 @@ body {
 .home-text {
     width: 460px; 
     flex-shrink: 0; 
-    margin-top: 30px; /* Nudges the block down so the "Hello" perfectly aligns with the headshot */
+    margin-top: 30px; 
 }
 
 .home-text h2 {
