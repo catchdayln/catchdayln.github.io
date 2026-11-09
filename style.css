@@ -692,7 +692,7 @@ body:not(.home-body) {
 }
 
 .resume-sub-header {
-    width: 680px;
+    width: 725px;
     margin: 0 auto 20px;
     display: flex;
     justify-content: space-between;
@@ -720,7 +720,7 @@ body:not(.home-body) {
 .resume-box {
     display: flex;
     flex-direction: row;
-    width: 680px;
+    width: 725px;
     background: #fff;
     box-shadow: 0 5px 20px rgba(0,0,0,0.08); 
     border-radius: 0; 
