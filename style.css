@@ -234,7 +234,7 @@ body {
     font-size: 32px;
     line-height: 1.2;
     margin-bottom: 20px;
-    font-weight: 800; /* BOLDED */
+    font-weight: 800; 
     color: #000;
 }
 
@@ -460,7 +460,7 @@ body:not(.home-body) {
 
 .page-header h1 {
     font-family: 'Poppins', 'Noto Sans JP', sans-serif;
-    font-weight: 800; /* BOLDED */
+    font-weight: 800; 
     font-size: 35px;
     color: #000;
     margin-bottom: 0;
@@ -544,7 +544,7 @@ body:not(.home-body) {
 
 .project-info h2 {
     font-family: 'Poppins', 'Noto Sans JP', sans-serif;
-    font-weight: 800; /* BOLDED */
+    font-weight: 800; 
     font-size: 20px;
     color: var(--wix-red);
     margin-bottom: 5px; 
@@ -613,7 +613,7 @@ body:not(.home-body) {
 
 .project-detail-header h1 {
     font-family: 'Poppins', 'Noto Sans JP', sans-serif;
-    font-weight: 800; /* BOLDED */
+    font-weight: 800; 
     font-size: 35px;
     margin-bottom: 10px;
 }
@@ -692,7 +692,7 @@ body:not(.home-body) {
 }
 
 .resume-sub-header {
-    width: 725px;
+    width: 725px; /* Locked to your requested 725px */
     margin: 0 auto 20px;
     display: flex;
     justify-content: space-between;
@@ -701,7 +701,7 @@ body:not(.home-body) {
 
 .resume-sub-header h2 {
     font-family: 'Poppins', 'Noto Sans JP', sans-serif;
-    font-weight: 800; /* BOLDED */
+    font-weight: 800; 
     font-size: 24px;
     color: #000;
 }
@@ -720,7 +720,7 @@ body:not(.home-body) {
 .resume-box {
     display: flex;
     flex-direction: row;
-    width: 725px;
+    width: 725px; /* Locked to your requested 725px */
     background: #fff;
     box-shadow: 0 5px 20px rgba(0,0,0,0.08); 
     border-radius: 0; 
@@ -728,9 +728,10 @@ body:not(.home-body) {
     padding: 40px 35px;
 }
 
+/* Expanded left column to forcefully push the body text inward */
 .resume-left {
-    flex: 0 0 190px; 
-    padding-right: 25px;
+    flex: 0 0 250px; /* Greatly increased to compact the right side */
+    padding-right: 50px; /* Doubled the visual gap between columns */
     display: flex;
     flex-direction: column; 
 }
@@ -741,7 +742,7 @@ body:not(.home-body) {
 
 .resume-dates {
     font-family: 'Poppins', 'Noto Sans JP', sans-serif;
-    font-weight: 800; /* BOLDED */
+    font-weight: 800; 
     font-size: 18px; 
     color: var(--wix-red);
     margin-bottom: 8px;
@@ -863,7 +864,7 @@ body:not(.home-body) {
 
 .skills-wrapper h2 {
     font-family: 'Poppins', 'Noto Sans JP', sans-serif;
-    font-weight: 800; /* BOLDED */
+    font-weight: 800; 
     font-size: 24px;
     color: #000;
     margin-bottom: 30px;
