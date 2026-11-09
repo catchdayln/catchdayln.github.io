@@ -692,7 +692,7 @@ body:not(.home-body) {
 }
 
 .resume-sub-header {
-    width: 725px; /* Locked to your requested 725px */
+    width: 725px; 
     margin: 0 auto 20px;
     display: flex;
     justify-content: space-between;
@@ -720,18 +720,19 @@ body:not(.home-body) {
 .resume-box {
     display: flex;
     flex-direction: row;
-    width: 725px; /* Locked to your requested 725px */
+    width: 725px; 
     background: #fff;
     box-shadow: 0 5px 20px rgba(0,0,0,0.08); 
     border-radius: 0; 
     margin: 0 auto 35px;
-    padding: 40px 35px;
+    padding: 50px 45px; /* Increased side padding to push everything inward */
+    gap: 60px; /* Explicitly forces a 60px dead-zone between left and right columns */
 }
 
-/* Expanded left column to forcefully push the body text inward */
+/* Restricted left column width to shrink wrapping and enforce density */
 .resume-left {
-    flex: 0 0 250px; /* Greatly increased to compact the right side */
-    padding-right: 50px; /* Doubled the visual gap between columns */
+    flex: 0 0 170px; 
+    padding-right: 0; /* Gap handles the spacing now */
     display: flex;
     flex-direction: column; 
 }
