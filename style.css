@@ -477,16 +477,6 @@ body:not(.home-body) {
     margin: 0 auto;
 }
 
-.resume-company a {
-    color: inherit;
-    text-decoration: none;
-    transition: color 0.3s ease;
-}
-
-.resume-company a:hover {
-    color: var(--wix-red);
-}
-
 /* Resume Anchor Links Menu */
 .resume-anchors {
     display: flex;
@@ -749,29 +739,43 @@ body:not(.home-body) {
     flex: 1;
 }
 
+/* Dates: Poppins Semi-Bold, 20px */
 .resume-dates {
     font-family: 'Poppins', 'Noto Sans JP', sans-serif;
     font-weight: 600;
-    font-size: 18px;
+    font-size: 20px;
     color: var(--wix-red);
     margin-bottom: 15px;
 }
 
+/* Role: Avenir Light, 17px */
 .resume-role {
-    font-family: 'Avenir', 'Nunito Sans', 'Noto Sans JP', sans-serif;
-    font-weight: 400;
-    font-size: 13px;
+    font-family: 'Avenir Light', 'Avenir', 'Nunito Sans', 'Noto Sans JP', sans-serif;
+    font-weight: 300;
+    font-size: 17px;
     color: #000;
     letter-spacing: 1px;
     margin-bottom: 15px;
     text-transform: uppercase;
 }
 
+/* Company: Avenir Light, 14px */
 .resume-company {
     font-family: 'Avenir Light', 'Nunito Sans', 'Noto Sans JP', sans-serif;
     font-weight: 300;
-    font-size: 13px;
+    font-size: 14px;
     color: #555; 
+}
+
+/* Company Link: Red without hovering, Grey on hover */
+.resume-company a {
+    color: var(--wix-red);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.resume-company a:hover {
+    color: var(--text-grey);
 }
 
 .text-black {
@@ -790,10 +794,11 @@ body:not(.home-body) {
     font-weight: bold;
 }
 
+/* Body text: Avenir Light, 16px */
 .resume-right p {
     font-family: 'Avenir Light', 'Avenir', 'Nunito Sans', 'Noto Sans JP', sans-serif;
     font-weight: 300;
-    font-size: 17px;
+    font-size: 16px;
     line-height: 1.5em;
     color: #333;
     margin-bottom: 25px;
@@ -825,7 +830,7 @@ body:not(.home-body) {
 .resume-bullet-list li {
     font-family: 'Avenir Light', 'Avenir', 'Nunito Sans', 'Noto Sans JP', sans-serif;
     font-weight: 300;
-    font-size: 17px;
+    font-size: 16px;
     line-height: 1.5em;
     color: #333;
     margin-bottom: 5px;
