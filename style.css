@@ -477,6 +477,16 @@ body:not(.home-body) {
     margin: 0 auto;
 }
 
+.resume-company a {
+    color: inherit;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.resume-company a:hover {
+    color: var(--wix-red);
+}
+
 /* Resume Anchor Links Menu */
 .resume-anchors {
     display: flex;
