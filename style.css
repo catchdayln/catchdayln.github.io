@@ -234,7 +234,7 @@ body {
     font-size: 32px;
     line-height: 1.2;
     margin-bottom: 20px;
-    font-weight: 600;
+    font-weight: 800; /* BOLDED */
     color: #000;
 }
 
@@ -460,7 +460,7 @@ body:not(.home-body) {
 
 .page-header h1 {
     font-family: 'Poppins', 'Noto Sans JP', sans-serif;
-    font-weight: 600;
+    font-weight: 800; /* BOLDED */
     font-size: 35px;
     color: #000;
     margin-bottom: 0;
@@ -544,7 +544,7 @@ body:not(.home-body) {
 
 .project-info h2 {
     font-family: 'Poppins', 'Noto Sans JP', sans-serif;
-    font-weight: 600;
+    font-weight: 800; /* BOLDED */
     font-size: 20px;
     color: var(--wix-red);
     margin-bottom: 5px; 
@@ -613,7 +613,7 @@ body:not(.home-body) {
 
 .project-detail-header h1 {
     font-family: 'Poppins', 'Noto Sans JP', sans-serif;
-    font-weight: 600;
+    font-weight: 800; /* BOLDED */
     font-size: 35px;
     margin-bottom: 10px;
 }
@@ -691,7 +691,6 @@ body:not(.home-body) {
     margin-bottom: 0 !important;
 }
 
-/* Narrowed the main wrappers to 680px to perfectly match the compact original */
 .resume-sub-header {
     width: 680px;
     margin: 0 auto 20px;
@@ -702,7 +701,7 @@ body:not(.home-body) {
 
 .resume-sub-header h2 {
     font-family: 'Poppins', 'Noto Sans JP', sans-serif;
-    font-weight: 600;
+    font-weight: 800; /* BOLDED */
     font-size: 24px;
     color: #000;
 }
@@ -718,7 +717,6 @@ body:not(.home-body) {
     align-items: center;
 }
 
-/* Tighter padding and margins */
 .resume-box {
     display: flex;
     flex-direction: row;
@@ -730,7 +728,6 @@ body:not(.home-body) {
     padding: 40px 35px;
 }
 
-/* Slimmer left column to reduce dead space */
 .resume-left {
     flex: 0 0 190px; 
     padding-right: 25px;
@@ -742,16 +739,14 @@ body:not(.home-body) {
     flex: 1;
 }
 
-/* Dates tightened */
 .resume-dates {
     font-family: 'Poppins', 'Noto Sans JP', sans-serif;
-    font-weight: 600;
+    font-weight: 800; /* BOLDED */
     font-size: 18px; 
     color: var(--wix-red);
     margin-bottom: 8px;
 }
 
-/* Role tightened to match original scale better */
 .resume-role {
     font-family: 'Avenir Light', 'Avenir', 'Nunito Sans', 'Noto Sans JP', sans-serif;
     font-weight: 300;
@@ -796,7 +791,6 @@ body:not(.home-body) {
     font-weight: bold;
 }
 
-/* Tighter paragraph spacing */
 .resume-right p {
     font-family: 'Avenir Light', 'Avenir', 'Nunito Sans', 'Noto Sans JP', sans-serif;
     font-weight: 300;
@@ -869,7 +863,7 @@ body:not(.home-body) {
 
 .skills-wrapper h2 {
     font-family: 'Poppins', 'Noto Sans JP', sans-serif;
-    font-weight: 600;
+    font-weight: 800; /* BOLDED */
     font-size: 24px;
     color: #000;
     margin-bottom: 30px;
