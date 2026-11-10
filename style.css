@@ -46,7 +46,6 @@ body {
     overflow: hidden; 
 }
 
-/* --- Global Header --- */
 .main-header {
     padding: 30px 60px;
     display: flex;
@@ -129,7 +128,6 @@ body {
     color: var(--wix-red);
 }
 
-/* --- Language Dropdown --- */
 .lang-dropdown {
     position: relative;
     display: inline-block;
@@ -168,7 +166,6 @@ body {
     color: var(--wix-red);
 }
 
-/* --- Homepage Layout --- */
 .home-main {
     flex: 1; 
     position: relative;
@@ -201,7 +198,6 @@ body {
     align-items: center; 
 }
 
-/* --- Profile Card --- */
 .profile-card {
     width: 360px;
     flex-shrink: 0;
@@ -293,7 +289,9 @@ body {
     margin-bottom: 35px;
 }
 
-/* --- Global Buttons --- */
+/* =========================================
+   GLOBAL BUTTONS
+========================================= */
 .btn {
     display: inline-block;
     padding: 10px 30px;
@@ -362,7 +360,9 @@ body {
     text-align: left;
 }
 
-/* --- Global Footer --- */
+/* =========================================
+   GLOBAL FOOTER
+========================================= */
 .main-footer {
     padding: 30px 60px;
     background: #fff;
@@ -525,22 +525,23 @@ body:not(.home-body) {
     position: relative; 
 }
 
-.project-info::before {
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 75px; 
-    width: 8px;
-    height: 45px;
-    background-color: var(--wix-red);
-}
-
 .project-info h2 {
+    position: relative;
     font-family: 'Poppins', 'Noto Sans JP', sans-serif;
     font-weight: 800;
     font-size: 20px;
     color: var(--wix-red);
     margin-bottom: 5px; 
+}
+
+.project-info h2::before {
+    content: '';
+    position: absolute;
+    left: -45px; 
+    top: 2px;
+    width: 8px;
+    height: 45px;
+    background-color: var(--wix-red);
 }
 
 .project-info .project-role {
@@ -919,8 +920,7 @@ body:not(.home-body) {
     color: var(--wix-red);
     text-decoration: none;
     display: inline-block;
-    margin-top: 10px;
-    margin-bottom: 40px;
+    margin: 0; 
     transition: color 0.3s ease;
 }
 
@@ -939,7 +939,7 @@ body:not(.home-body) {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 30px;
+    gap: 30px; 
 }
 
 .contact-box p {
@@ -996,9 +996,8 @@ body:not(.home-body) {
 }
 
 /* =========================================
-   TABLET & VERTICAL MONITOR ADJUSTMENTS (1150px)
+   TABLET & VERTICAL MONITOR ADJUSTMENTS
 ========================================= */
-
 @media (max-width: 1150px) {
     .main-header {
         flex-direction: row;
@@ -1123,9 +1122,8 @@ body:not(.home-body) {
 }
 
 /* =========================================
-   MOBILE SPECIFIC ADJUSTMENTS (800px)
+   MOBILE SPECIFIC ADJUSTMENTS
 ========================================= */
-
 @media (max-width: 800px) {
     .page-container {
         padding: 0 15px;
@@ -1147,8 +1145,8 @@ body:not(.home-body) {
         padding: 30px 20px; 
     }
     
-    .project-info::before {
-        top: 35px; 
+    .project-info h2::before {
+        left: -20px; 
     }
 
     .resume-sub-header {
