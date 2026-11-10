@@ -1010,6 +1010,10 @@ body:not(.home-body) {
         align-items: flex-start;
     }
     
+    .red-square {
+        margin-top: 7px;
+    }
+    
     .title-group {
         display: flex;
         flex-direction: column;
