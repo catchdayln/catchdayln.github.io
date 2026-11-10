@@ -729,7 +729,17 @@ body:not(.home-body) {
     gap: 60px; /* Explicitly forces a 60px dead-zone between left and right columns */
 }
 
-/* Restricted left column width to shrink wrapping and enforce density */
+/* Keeps the degree PDF links colored correctly */
+.degree-title a {
+    color: inherit;
+    text-decoration: none;
+    transition: opacity 0.3s ease;
+}
+
+.degree-title a:hover {
+    opacity: 0.7; /* Gives it a nice fade effect when hovered */
+}
+
 .resume-left {
     flex: 0 0 170px; 
     padding-right: 0; /* Gap handles the spacing now */
