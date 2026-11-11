@@ -14,7 +14,6 @@ html, body {
     margin: 0;
     padding: 0;
     width: 100%;
-    overflow-x: hidden; 
 }
 
 html {
@@ -57,6 +56,7 @@ body {
     position: sticky;
     top: 0;
     transition: top 0.3s ease-in-out; 
+    will-change: top;
 }
 
 .main-header.hide-header {
@@ -429,7 +429,6 @@ body {
 body:not(.home-body) {
     display: block;
     height: auto;
-    overflow: auto;
     background-color: #f4f4f4; 
 }
 
@@ -536,7 +535,7 @@ body:not(.home-body) {
     font-weight: 800;
     font-size: 20px;
     color: var(--wix-red);
-   margin-bottom: 2px;
+    margin-bottom: 2px;
     line-height: 1.1;
 }
 
