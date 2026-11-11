@@ -1008,7 +1008,6 @@ body:not(.home-body) {
     .main-header {
         flex-direction: row;
         padding: 20px;
-        position: relative;
     }
 
     .logo-container {
