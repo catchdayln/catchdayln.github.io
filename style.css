@@ -56,11 +56,11 @@ body {
     border-bottom: 1px solid #eaeaea;
     position: sticky;
     top: 0;
-    transition: transform 0.3s ease-in-out;
+    transition: top 0.3s ease-in-out; 
 }
 
 .main-header.hide-header {
-    transform: translateY(-100%);
+    top: -150px; 
 }
 
 .logo-container {
