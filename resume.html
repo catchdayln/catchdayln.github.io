@@ -27,7 +27,6 @@
             <div class="lang-dropdown">
                 <a href="#" class="nav-lang">EN <span class="dropdown-arrow">&#711;</span></a>
                 <div class="lang-menu">
-                    <!-- Corrected dropdown links to target the Resume pages -->
                     <a href="resume.html" class="active">English</a>
                     <a href="ja/resume.html">日本語</a>
                 </div>
@@ -58,7 +57,7 @@
 
             <div class="resume-sub-header" id="experience">
                 <h2>Experience</h2>
-                <a href="/site-files/resume-june2024(edit).pdf" class="btn-small" target="_blank">DOWNLOAD CV</a>
+                <a href="site-files/resume-june2024(edit).pdf" class="btn-small" target="_blank">DOWNLOAD CV</a>
             </div>
 
             <div class="resume-list">
@@ -306,5 +305,25 @@
             </div>
         </div>
     </footer>
+
+    <!-- Smart Sticky Header Script -->
+    <script>
+        let lastScrollTop = 0;
+        const header = document.querySelector('.main-header');
+        const menuToggle = document.getElementById('menu-toggle');
+
+        window.addEventListener('scroll', () => {
+            if (menuToggle && menuToggle.checked) return;
+
+            let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            
+            if (scrollTop > lastScrollTop && scrollTop > 150) {
+                header.classList.add('hide-header');
+            } else {
+                header.classList.remove('hide-header');
+            }
+            lastScrollTop = scrollTop;
+        });
+    </script>
 </body>
 </html>
