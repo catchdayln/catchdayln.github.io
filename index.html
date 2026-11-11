@@ -101,5 +101,25 @@
             </div>
         </div>
     </footer>
+
+    <!-- Smart Sticky Header Script -->
+    <script>
+        let lastScrollTop = 0;
+        const header = document.querySelector('.main-header');
+        const menuToggle = document.getElementById('menu-toggle');
+
+        window.addEventListener('scroll', () => {
+            if (menuToggle && menuToggle.checked) return;
+
+            let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            
+            if (scrollTop > lastScrollTop && scrollTop > 150) {
+                header.classList.add('hide-header');
+            } else {
+                header.classList.remove('hide-header');
+            }
+            lastScrollTop = scrollTop;
+        });
+    </script>
 </body>
 </html>
