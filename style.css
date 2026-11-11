@@ -55,14 +55,13 @@ body {
     border-bottom: 1px solid #eaeaea;
     position: sticky;
     top: 0;
-    transition: top 0.3s ease-in-out; 
-    will-change: top;
+    transition: transform 0.3s ease-in-out; 
+    will-change: transform;
 }
 
 .main-header.hide-header {
-    top: -150px; 
+    transform: translateY(-100%);
 }
-
 .logo-container {
     display: flex;
     align-items: center;
