@@ -306,24 +306,58 @@
         </div>
     </footer>
 
-    <!-- Smart Sticky Header Script -->
+<!-- Smart Dynamic Header Script -->
     <script>
-        let lastScrollTop = 0;
-        const header = document.querySelector('.main-header');
-        const menuToggle = document.getElementById('menu-toggle');
-
-        window.addEventListener('scroll', () => {
-            if (menuToggle && menuToggle.checked) return;
-
-            let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        document.addEventListener("DOMContentLoaded", () => {
+            let lastScrollTop = 0;
+            const header = document.querySelector('.main-header');
+            const menuToggle = document.getElementById('menu-toggle');
             
-            if (scrollTop > lastScrollTop && scrollTop > 150) {
-                header.classList.add('hide-header');
-            } else {
-                header.classList.remove('hide-header');
-            }
-            lastScrollTop = scrollTop;
+            // Creates an invisible placeholder to prevent content from jumping
+            const placeholder = document.createElement('div');
+            placeholder.style.display = 'none';
+            header.parentNode.insertBefore(placeholder, header.nextSibling);
+
+            window.addEventListener('scroll', () => {
+                if (menuToggle && menuToggle.checked) return;
+
+                let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+                let headerHeight = header.offsetHeight;
+
+                if (scrollTop > headerHeight) {
+                    // We've scrolled past the header naturally
+                    if (!header.classList.contains('fixed-nav')) {
+                        placeholder.style.height = headerHeight + 'px';
+                        placeholder.style.display = 'block';
+                        header.classList.add('fixed-nav');
+                    }
+                    
+                    if (scrollTop < lastScrollTop - 5) {
+                        header.classList.add('show-nav'); // Scrolling Up -> Slide Down
+                    } else if (scrollTop > lastScrollTop + 5) {
+                        header.classList.remove('show-nav'); // Scrolling Down -> Hide
+                    }
+                } else {
+                    // We are at the very top of the page
+                    if (header.classList.contains('fixed-nav') && header.classList.contains('show-nav')) {
+                        // If it's already showing, keep it showing until we hit the absolute top
+                        if (scrollTop <= 0) {
+                            header.classList.remove('fixed-nav', 'show-nav');
+                            placeholder.style.display = 'none';
+                        } else if (scrollTop > lastScrollTop + 5) {
+                            header.classList.remove('show-nav');
+                        }
+                    } else {
+                        // Reset everything back to normal flow
+                        header.classList.remove('fixed-nav', 'show-nav');
+                        placeholder.style.display = 'none';
+                    }
+                }
+
+                lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
+            }, { passive: true });
         });
+    </script>
     </script>
 </body>
 </html>
