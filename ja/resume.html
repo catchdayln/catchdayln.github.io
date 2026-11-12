@@ -309,5 +309,43 @@
             </div>
         </div>
     </footer>
+   
+<!-- Smart Sticky Header Script -->
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            let lastScrollTop = 0;
+            const header = document.querySelector('.main-header');
+            const menuToggle = document.getElementById('menu-toggle');
+
+            window.addEventListener('scroll', () => {
+                if (menuToggle && menuToggle.checked) return;
+
+                let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+                // 1. Manage the drop shadow
+                if (scrollTop > 50) {
+                    header.classList.add('shadow-nav');
+                } else {
+                    header.classList.remove('shadow-nav');
+                }
+
+                // 2. Manage hiding and showing
+                if (scrollTop > 200) {
+                    if (scrollTop > lastScrollTop + 5) {
+                        // Scrolling DOWN -> Hide
+                        header.classList.add('hide-nav');
+                    } else if (scrollTop < lastScrollTop - 5) {
+                        // Scrolling UP -> Show
+                        header.classList.remove('hide-nav');
+                    }
+                } else {
+                    // Near the absolute top -> Always show smoothly
+                    header.classList.remove('hide-nav');
+                }
+
+                lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
+            }, { passive: true });
+        });
+    </script>
 </body>
 </html>
