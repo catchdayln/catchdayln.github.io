@@ -306,7 +306,7 @@
         </div>
     </footer>
 
-    <!-- Smart Dynamic Header Script -->
+<!-- Smart Sticky Header Script -->
     <script>
         document.addEventListener("DOMContentLoaded", () => {
             let lastScrollTop = 0;
@@ -318,16 +318,25 @@
 
                 let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
 
-                // 200px matches the negative top value in CSS
+                // 1. Manage the drop shadow
+                if (scrollTop > 50) {
+                    header.classList.add('shadow-nav');
+                } else {
+                    header.classList.remove('shadow-nav');
+                }
+
+                // 2. Manage hiding and showing
                 if (scrollTop > 200) {
-                    if (scrollTop < lastScrollTop - 5) {
-                        header.classList.add('show-nav'); // Scrolling Up -> Slide Down
-                    } else if (scrollTop > lastScrollTop + 5) {
-                        header.classList.remove('show-nav'); // Scrolling Down -> Hide
+                    if (scrollTop > lastScrollTop + 5) {
+                        // Scrolling DOWN -> Hide
+                        header.classList.add('hide-nav');
+                    } else if (scrollTop < lastScrollTop - 5) {
+                        // Scrolling UP -> Show
+                        header.classList.remove('hide-nav');
                     }
                 } else {
-                    // Near the top of the page, reset to normal flow
-                    header.classList.remove('show-nav');
+                    // Near the absolute top -> Always show smoothly
+                    header.classList.remove('hide-nav');
                 }
 
                 lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
