@@ -1,4 +1,23 @@
 /* =========================================
+   CUSTOM FONT HOSTING (LINE SEED)
+========================================= */
+@font-face {
+    font-family: 'LINE Seed JP';
+    src: url('fonts/LINESeedJP_OTF_Rg.woff2') format('woff2');
+    font-weight: 400; /* Regular */
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'LINE Seed JP';
+    src: url('fonts/LINESeedJP_OTF_Bd.woff2') format('woff2');
+    font-weight: 700; /* Bold */
+    font-style: normal;
+    font-display: swap;
+}
+
+/* =========================================
    VARIABLES & GLOBAL RESETS
 ========================================= */
 :root {
