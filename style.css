@@ -69,6 +69,18 @@ body {
     font-family: 'LINE Seed JP', 'Noto Sans JP', sans-serif;
 }
 
+/* Widens the text container slightly for Japanese to prevent awkward line breaks */
+:lang(ja) .home-text {
+    width: 580px; 
+}
+
+/* Enlarges button text for better Kanji legibility */
+:lang(ja) .btn,
+:lang(ja) .btn-small {
+    font-size: 15px; 
+    letter-spacing: 2px;
+}
+
 /* 経歴文（通常の太さ・斜体なし） */
 :lang(ja) .bio {
     font-size: 17px;
