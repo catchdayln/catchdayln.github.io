@@ -255,8 +255,8 @@ body {
     left: 0;
     top: 0; 
     bottom: 0; 
-    /* Increased width to extend slightly past the center line of the profile card */
-    width: calc(50vw - 240px); 
+    /* Adjusted for the wider container to keep the overlap perfect */
+    width: calc(50vw - 280px); 
     background-color: var(--bg-mid-grey);
     z-index: 0;
 }
@@ -266,7 +266,8 @@ body {
     z-index: 10;
     display: flex;
     width: 100%;
-    max-width: 980px;
+    /* Widened to 1040px to restore the 100px gap between card and text */
+    max-width: 1040px;
     margin: 0 auto; 
     justify-content: space-between; 
     align-items: center; 
@@ -337,7 +338,7 @@ body {
 }
 
 .home-text {
-    width: 580px; /* Widened to match the Japanese layout globally */
+    width: 580px; 
     flex-shrink: 0; 
     margin-top: 10px; 
 }
@@ -353,7 +354,7 @@ body {
 .home-text h3 {
     font-family: 'Avenir Light', 'Nunito Sans', 'Noto Sans JP', sans-serif;
     font-size: 26px;
-    font-weight: 700; /* Updated to Bold globally */
+    font-weight: 700; 
     margin-bottom: 35px;
 }
 
