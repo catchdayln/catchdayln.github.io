@@ -55,17 +55,20 @@ body {
     border-bottom: 1px solid #eaeaea;
     width: 100%;
     
-    /* Locks itself off-screen once you scroll past it naturally */
+    /* Default is perfectly visible at the top */
     position: sticky;
-    top: -200px; 
-    transition: top 0.3s ease-in-out;
+    top: 0; 
+    transition: top 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
     will-change: top;
 }
 
-/* Slides the header into view when you scroll up */
-.main-header.show-nav {
-    top: 0;
+.main-header.hide-nav {
+    top: -200px; 
+}
+
+.main-header.shadow-nav {
     box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+    border-bottom: 1px solid transparent; 
 }
 
 .logo-container {
