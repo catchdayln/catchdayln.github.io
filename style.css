@@ -255,7 +255,8 @@ body {
     left: 0;
     top: 0; 
     bottom: 0; 
-    width: calc(50vw - 310px); 
+    /* Increased width to extend slightly past the center line of the profile card */
+    width: calc(50vw - 240px); 
     background-color: var(--bg-mid-grey);
     z-index: 0;
 }
@@ -336,7 +337,7 @@ body {
 }
 
 .home-text {
-    width: 550px;
+    width: 580px; /* Widened to match the Japanese layout globally */
     flex-shrink: 0; 
     margin-top: 10px; 
 }
