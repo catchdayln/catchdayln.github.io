@@ -57,17 +57,38 @@ body {
 /* =========================================
    JAPANESE TYPOGRAPHY OVERRIDES
 ========================================= */
-/* Applies only when the HTML tag is set to lang="ja" */
-:lang(ja) .bio {
+/* HTMLタグが lang="ja" の場合のみ、これらの要素にLINE Seed JPを適用 */
+:lang(ja) .bio,
+:lang(ja) .quote,
+:lang(ja) .home-text h3,
+:lang(ja) .btn,
+:lang(ja) .btn-small,
+:lang(ja) .job-title,
+:lang(ja) .project-role,
+:lang(ja) .main-nav a {
     font-family: 'LINE Seed JP', 'Noto Sans JP', sans-serif;
+}
+
+/* 経歴文（通常の太さ・斜体なし） */
+:lang(ja) .bio {
     font-size: 17px;
-    font-style: oblique; /* Forces the browser to slant the regular font */
+    font-style: normal; 
     font-weight: 400; 
 }
 
+/* 引用文（斜体） */
+:lang(ja) .quote {
+    font-style: oblique; 
+}
+
+/* 「デイリンです〜」のテキスト（太字） */
+:lang(ja) .home-text h3 {
+    font-weight: 700; 
+}
+
+/* 役職名・プロジェクトロール */
 :lang(ja) .job-title,
 :lang(ja) .project-role {
-    font-family: 'LINE Seed JP', 'Noto Sans JP', sans-serif;
     font-size: 20px;
     line-height: 1.4;
 }
