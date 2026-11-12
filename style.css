@@ -54,21 +54,20 @@ body {
     z-index: 1000; 
     border-bottom: 1px solid #eaeaea;
     width: 100%;
+    
+    /* Locks itself off-screen once you scroll past it naturally */
+    position: sticky;
+    top: -200px; 
+    transition: top 0.3s ease-in-out;
+    will-change: top;
 }
 
-.main-header.fixed-nav {
-    position: fixed;
+/* Slides the header into view when you scroll up */
+.main-header.show-nav {
     top: 0;
-    left: 0;
-    transform: translateY(-100%);
-    transition: transform 0.3s ease-in-out;
-    will-change: transform;
-}
-
-.main-header.fixed-nav.show-nav {
-    transform: translateY(0);
     box-shadow: 0 4px 12px rgba(0,0,0,0.06);
 }
+
 .logo-container {
     display: flex;
     align-items: center;
