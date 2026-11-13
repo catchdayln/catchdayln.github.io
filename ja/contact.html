@@ -6,8 +6,7 @@
     <meta name="google" content="notranslate">
     <title>お問い合わせ | デイリン ヴァン ラーネン</title>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;700&family=Nunito+Sans:opsz,wght@6..12,300;6..12,400;6..12,700&family=Poppins:wght@600;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/line-seed-jp@5.0.8/400.css">
-    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../style.css?v=31">
 </head>
 <body>
     <header class="main-header">
@@ -28,7 +27,7 @@
             
             <div class="lang-dropdown">
                 <button class="nav-lang" id="lang-btn">JP <span class="dropdown-arrow">&#711;</span></button>
-                <div class="lang-menu">
+                <div class="lang-menu" id="lang-menu-list">
                     <a href="../contact.html">English</a>
                     <a href="contact.html" class="active">日本語</a>
                 </div>
@@ -83,5 +82,67 @@
             </div>
         </div>
     </footer>
+
+    <!-- Smart Scripts -->
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            let lastScrollTop = 0;
+            const header = document.querySelector('.main-header');
+            const menuToggle = document.getElementById('menu-toggle');
+
+            // 1. Sticky Header Logic
+            window.addEventListener('scroll', () => {
+                if (menuToggle && menuToggle.checked) return;
+
+                let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+                
+                if (scrollTop > 50) {
+                    header.classList.add('shadow-nav');
+                } else {
+                    header.classList.remove('shadow-nav');
+                }
+
+                if (scrollTop > 200) {
+                    if (scrollTop > lastScrollTop + 5) {
+                        header.classList.add('hide-nav');
+                    } else if (scrollTop < lastScrollTop - 5) {
+                        header.classList.remove('hide-nav');
+                    }
+                } else {
+                    header.classList.remove('hide-nav');
+                }
+                lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
+            }, { passive: true });
+            
+            // 2. Mobile Language Toggle Logic
+            const langBtn = document.getElementById('lang-btn');
+            const langMenu = document.getElementById('lang-menu-list');
+
+            if (langBtn && langMenu) {
+                langBtn.addEventListener('click', (e) => {
+                    e.stopPropagation(); // Stops the click from immediately triggering the document close listener
+                    langMenu.classList.toggle('show-mobile'); 
+                });
+            }
+
+            // Close the language menu if clicking anywhere else on the screen
+            document.addEventListener('click', (e) => {
+                if (langMenu && langMenu.classList.contains('show-mobile')) {
+                    if (!langBtn.contains(e.target) && !langMenu.contains(e.target)) {
+                        langMenu.classList.remove('show-mobile');
+                    }
+                }
+            });
+            
+            // Close language menu if the hamburger menu is closed
+            if (menuToggle) {
+                menuToggle.addEventListener('change', () => {
+                    if (!menuToggle.checked && langMenu) {
+                        langMenu.classList.remove('show-mobile');
+                    }
+                });
+            }
+        });
+    </script>
 </body>
 </html>
