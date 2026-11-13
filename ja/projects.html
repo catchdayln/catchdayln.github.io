@@ -6,8 +6,8 @@
     <meta name="google" content="notranslate">
     <title>ポートフォリオ | デイリン ヴァン ラーネン</title>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;700&family=Nunito+Sans:opsz,wght@6..12,300;6..12,400;6..12,700&family=Poppins:wght@600;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/line-seed-jp@5.0.8/400.css">
-    <link rel="stylesheet" href="../style.css">
+    <!-- Bumped CSS version to ensure the latest mobile padding rules apply -->
+    <link rel="stylesheet" href="../style.css?v=28">
 </head>
 <body>
     <header class="main-header">
@@ -27,8 +27,10 @@
             <label for="menu-toggle" class="close-menu">&times;</label>
             
             <div class="lang-dropdown">
+                <!-- Native button instead of a div for reliable mobile tapping -->
                 <button class="nav-lang" id="lang-btn">JP <span class="dropdown-arrow">&#711;</span></button>
-                <div class="lang-menu">
+                <!-- Added missing id="lang-menu-list" for the JS to target -->
+                <div class="lang-menu" id="lang-menu-list">
                     <a href="../projects.html">English</a>
                     <a href="projects.html" class="active">日本語</a>
                 </div>
@@ -41,149 +43,151 @@
         </nav>
     </header>
 
-    <main class="page-container">
-        <div class="page-header">
-            <div class="header-title-wrapper">
-                <div class="red-square-large"></div>
-                <h1>ポートフォリオ</h1>
-            </div>
-            <p class="intro-text">これらのプロジェクトは私の作業の一部です。私の幅広い経験の中で最もな強みは国際教育プログラムの管理と強化ですが、8年以上のマーケティングマネージャーとしての経験も含まれています。コンテンツ作成とデジタルデザインのスキルは、国際プログラム管理の専門知識を支援するために活用しています。これらのメディアスキルは特に、プログラムの募集強化、ソーシャルメディアキャンペーンの管理、大学プログラムのグローバルな観客への宣伝においてとても活用的な能力だと自負しています。</p>
-        </div>
-
-        <div class="project-list">
-            
-            <div class="project-box">
-                <div class="project-info">
-                    <h2>Executive MPA</h2>
-                    <p class="project-role">大学院プログラムマネージャー</p>
-                    <p class="project-desc">ポートランド州立大学のエグゼクティブMPAプログラム（EMPA）を指導しました。このプログラムは実践的な学びの機会を通じてキャリアの発展を目指す専門家を対象として設計されています。私はプログラムを管理、調整し、参加者の専門的な経歴を直接的に向上させる適用可能な経験を提供することに務めました。</p>
-                    <a href="empa.html" class="btn-small">詳細を見る</a>
+    <main class="projects-main">
+        <div class="page-container">
+            <div class="page-header">
+                <div class="header-title-wrapper">
+                    <div class="red-square-large"></div>
+                    <h1>ポートフォリオ</h1>
                 </div>
-                <div class="project-media">
-                    <img src="../empa/empa-hero.jpg" alt="Executive MPA">
-                </div>
+                <p class="intro-text">これらのプロジェクトは私の作業の一部です。私の幅広い経験の中で最もな強みは国際教育プログラムの管理と強化ですが、8年以上のマーケティングマネージャーとしての経験も含まれています。コンテンツ作成とデジタルデザインのスキルは、国際プログラム管理の専門知識を支援するために活用しています。これらのメディアスキルは特に、プログラムの募集強化、ソーシャルメディアキャンペーンの管理、大学プログラムのグローバルな観客への宣伝においてとても活用的な能力だと自負しています。</p>
             </div>
 
-            <div class="project-box">
-                <div class="project-info">
-                    <h2>YSEALI</h2>
-                    <p class="project-role">大学国際プログラム調整</p>
-                    <p class="project-desc">ポートランド州立大学が連邦政府と協力して若手東南アジアリーダーズイニシアティブ（YSEALI）プログラムを開催する支援をしました。地元の組織と協力して、プログラム参加者が学業で価値を見出し、成功するための追加のリソースを創出する支援をしました。</p>
-                    <a href="yseali.html" class="btn-small">詳細を見る</a>
+            <div class="project-list">
+                
+                <div class="project-box">
+                    <div class="project-info">
+                        <h2>Executive MPA</h2>
+                        <p class="project-role">大学院プログラムマネージャー</p>
+                        <p class="project-desc">ポートランド州立大学のエグゼクティブMPAプログラム（EMPA）を指導しました。このプログラムは実践的な学びの機会を通じてキャリアの発展を目指す専門家を対象として設計されています。私はプログラムを管理、調整し、参加者の専門的な経歴を直接的に向上させる適用可能な経験を提供することに務めました。</p>
+                        <a href="empa.html" class="btn-small">詳細を見る</a>
+                    </div>
+                    <div class="project-media">
+                        <img src="../empa/empa-hero.jpg" alt="Executive MPA">
+                    </div>
                 </div>
-                <div class="project-media">
-                    <img src="../yseali/yseali-hero.jpg" alt="YSEALI">
-                </div>
-            </div>
 
-            <div class="project-box">
-                <div class="project-info">
-                    <h2>American English Institute</h2>
-                    <p class="project-role">マーケティング・プロモーション</p>
-                    <p class="project-desc">AEIでの私の役職は、イベントの調整、ソーシャルメディアの管理、コンテンツの作成、プロモーション資料の設計、家庭教師、教室補助およびテクニカルサポートをカバーしました。また、学生、教職員、提携プログラムとの直接の連絡窓口も担当していました。</p>
-                    <a href="aei.html" class="btn-small">詳細を見る</a>
+                <div class="project-box">
+                    <div class="project-info">
+                        <h2>YSEALI</h2>
+                        <p class="project-role">大学国際プログラム調整</p>
+                        <p class="project-desc">ポートランド州立大学が連邦政府と協力して若手東南アジアリーダーズイニシアティブ（YSEALI）プログラムを開催する支援をしました。地元の組織と協力して、プログラム参加者が学業で価値を見出し、成功するための追加のリソースを創出する支援をしました。</p>
+                        <a href="yseali.html" class="btn-small">詳細を見る</a>
+                    </div>
+                    <div class="project-media">
+                        <img src="../yseali/yseali-hero.jpg" alt="YSEALI">
+                    </div>
                 </div>
-                <div class="project-media">
-                    <img src="../aei/aei-hero.jpg" alt="American English Institute">
-                </div>
-            </div>
 
-            <div class="project-box">
-                <div class="project-info">
-                    <h2>Breakaway Promotions</h2>
-                    <p class="project-role">マーケティングマネージャー</p>
-                    <p class="project-desc">グラフィックス、コンテンツ制作、アウトリーチ調整、スポンサー/パブリックリレーションズ、プレス、コピーライティング、パブリシティ、および年間数十のイベントのマーケティング、さらにメディアチームスタッフの採用と管理。</p>
-                    <a href="breakaway.html" class="btn-small">詳細を見る</a>
+                <div class="project-box">
+                    <div class="project-info">
+                        <h2>American English Institute</h2>
+                        <p class="project-role">マーケティング・プロモーション</p>
+                        <p class="project-desc">AEIでの私の役職は、イベントの調整、ソーシャルメディアの管理、コンテンツの作成、プロモーション資料の設計、家庭教師、教室補助およびテクニカルサポートをカバーしました。また、学生、教職員、提携プログラムとの直接の連絡窓口も担当していました。</p>
+                        <a href="aei.html" class="btn-small">詳細を見る</a>
+                    </div>
+                    <div class="project-media">
+                        <img src="../aei/aei-hero.jpg" alt="American English Institute">
+                    </div>
                 </div>
-                <div class="project-media">
-                    <img src="../breakaway/ba-1.png" alt="Breakaway Promotions">
-                </div>
-            </div>
 
-            <div class="project-box">
-                <div class="project-info">
-                    <h2>Sea to Summit</h2>
-                    <p class="project-role">イベントのプロモーション</p>
-                    <p class="project-desc">日本のモンベルで働き、彼らのSea to Summitイベントシリーズのプロモーションコンテンツを作成しました。この役割では、日本全国の様々な場所でイベントの可視性と参加を高めるためのマーケティング戦略の開発に携わり、異文化のプロモーションや国際イベントマーケティングの経験を積みました。</p>
-                    <a href="seatosummit.html" class="btn-small">詳細を見る</a>
+                <div class="project-box">
+                    <div class="project-info">
+                        <h2>Breakaway Promotions</h2>
+                        <p class="project-role">マーケティングマネージャー</p>
+                        <p class="project-desc">グラフィックス、コンテンツ制作、アウトリーチ調整、スポンサー/パブリックリレーションズ、プレス、コピーライティング、パブリシティ、および年間数十のイベントのマーケティング、さらにメディアチームスタッフの採用と管理。</p>
+                        <a href="breakaway.html" class="btn-small">詳細を見る</a>
+                    </div>
+                    <div class="project-media">
+                        <img src="../breakaway/ba-1.png" alt="Breakaway Promotions">
+                    </div>
                 </div>
-                <div class="project-media">
-                    <img src="../seatosummit/s2s-hero.jpg" alt="Sea to Summit">
-                </div>
-            </div>
 
-            <div class="project-box">
-                <div class="project-info">
-                    <h2>International Programs</h2>
-                    <p class="project-role">Cultural Ambassador</p>
-                    <p class="project-desc">日本関連の国際グループやプログラムの参加、調整、および開発。オレゴン大学AEI、オレゴン州立大学のINTO、東京国際大学（TIUA）などの学校からのプログラムのほか、文化クラブ、言語サークル、国際ミートアップの調整も担当しました。</p>
-                    <a href="intl-programs.html" class="btn-small">詳細を見る</a>
+                <div class="project-box">
+                    <div class="project-info">
+                        <h2>Sea to Summit</h2>
+                        <p class="project-role">イベントのプロモーション</p>
+                        <p class="project-desc">日本のモンベルで働き、彼らのSea to Summitイベントシリーズのプロモーションコンテンツを作成しました。この役割では、日本全国の様々な場所でイベントの可視性と参加を高めるためのマーケティング戦略の開発に携わり、異文化のプロモーションや国際イベントマーケティングの経験を積みました。</p>
+                        <a href="seatosummit.html" class="btn-small">詳細を見る</a>
+                    </div>
+                    <div class="project-media">
+                        <img src="../seatosummit/s2s-hero.jpg" alt="Sea to Summit">
+                    </div>
                 </div>
-                <div class="project-media">
-                    <img src="../intl-programs/int-hero.jpg" alt="International Programs">
-                </div>
-            </div>
 
-            <div class="project-box">
-                <div class="project-info">
-                    <h2>Japanese YouTube Series</h2>
-                    <p class="project-role">Host / Content Creation</p>
-                    <p class="project-desc">英語話者と日本語話者の両方に文化と言語を教えるYouTubeシリーズ。動画では旅行アドバイスやガイド、時折コメディスキットやゲームも取り上げました。</p>
-                    <a href="youtube.html" class="btn-small">詳細を見る</a>
+                <div class="project-box">
+                    <div class="project-info">
+                        <h2>International Programs</h2>
+                        <p class="project-role">Cultural Ambassador</p>
+                        <p class="project-desc">日本関連の国際グループやプログラムの参加、調整、および開発。オレゴン大学AEI、オレゴン州立大学のINTO、東京国際大学（TIUA）などの学校からのプログラムのほか、文化クラブ、言語サークル、国際ミートアップの調整も担当しました。</p>
+                        <a href="intl-programs.html" class="btn-small">詳細を見る</a>
+                    </div>
+                    <div class="project-media">
+                        <img src="../intl-programs/int-hero.jpg" alt="International Programs">
+                    </div>
                 </div>
-                <div class="project-media">
-                    <img src="../youtube/youtube-hero.png" alt="Japanese YouTube Series">
-                </div>
-            </div>
 
-            <div class="project-box">
-                <div class="project-info">
-                    <h2>Graphics & Logos</h2>
-                    <p class="project-role">Graphic Design</p>
-                    <p class="project-desc">カテゴライズされていないグラフィックス、ロゴ、および以前の作業サンプルに関連する特定の内容を持たないさまざまなデジタルコンテンツ。</p>
-                    <a href="graphics.html" class="btn-small">詳細を見る</a>
+                <div class="project-box">
+                    <div class="project-info">
+                        <h2>Japanese YouTube Series</h2>
+                        <p class="project-role">Host / Content Creation</p>
+                        <p class="project-desc">英語話者と日本語話者の両方に文化と言語を教えるYouTubeシリーズ。動画では旅行アドバイスやガイド、時折コメディスキットやゲームも取り上げました。</p>
+                        <a href="youtube.html" class="btn-small">詳細を見る</a>
+                    </div>
+                    <div class="project-media">
+                        <img src="../youtube/youtube-hero.png" alt="Japanese YouTube Series">
+                    </div>
                 </div>
-                <div class="project-media">
-                    <img src="../photos/graphics-thumb.png" alt="Graphics and Logos">
-                </div>
-            </div>
 
-            <div class="project-box">
-                <div class="project-info">
-                    <h2>Elijah Dash</h2>
-                    <p class="project-role">Graphic Design / Marketing Coordinator</p>
-                    <p class="project-desc">同僚の家族の息子が脳腫瘍と診断された際、急遽募金イベントを企画しました。グラフィックス、ソーシャルメディア、アウトリーチ、スポンサーシップ、およびイベント調整を支援しました。</p>
-                    <a href="elijahdash.html" class="btn-small">詳細を見る</a>
+                <div class="project-box">
+                    <div class="project-info">
+                        <h2>Graphics & Logos</h2>
+                        <p class="project-role">Graphic Design</p>
+                        <p class="project-desc">カテゴライズされていないグラフィックス、ロゴ、および以前の作業サンプルに関連する特定の内容を持たないさまざまなデジタルコンテンツ。</p>
+                        <a href="graphics.html" class="btn-small">詳細を見る</a>
+                    </div>
+                    <div class="project-media">
+                        <img src="../photos/graphics-thumb.png" alt="Graphics and Logos">
+                    </div>
                 </div>
-                <div class="project-media">
-                    <img src="../elijahdash/elijah-hero.jpg" alt="Elijah Dash">
-                </div>
-            </div>
-            
-            <div class="project-box">
-                <div class="project-info">
-                    <h2>Product Advantage</h2>
-                    <p class="project-role">Logo Design</p>
-                    <p class="project-desc">オレゴン州を拠点とする新しい自動車詳細会社のためのロゴ作成とブランディング。グラフィックス、カレンダー、製品広告、バナー、看板など。</p>
-                    <a href="productadvantage.html" class="btn-small">詳細を見る</a>
-                </div>
-                <div class="project-media">
-                    <img src="../productadvantage/productadvantage-hero.png" alt="Product Advantage">
-                </div>
-            </div>
 
-            <div class="project-box">
-                <div class="project-info">
-                    <h2>Beer & Wine Festivals</h2>
-                    <p class="project-role">Logo Design</p>
-                    <p class="project-desc">地域内のビールとワインの祭りのために制作されたさまざまな広告、グラフィックス、およびロゴ。</p>
-                    <a href="festivals.html" class="btn-small">詳細を見る</a>
+                <div class="project-box">
+                    <div class="project-info">
+                        <h2>Elijah Dash</h2>
+                        <p class="project-role">Graphic Design / Marketing Coordinator</p>
+                        <p class="project-desc">同僚の家族の息子が脳腫瘍と診断された際、急遽募金イベントを企画しました。グラフィックス、ソーシャルメディア、アウトリーチ、スポンサーシップ、およびイベント調整を支援しました。</p>
+                        <a href="elijahdash.html" class="btn-small">詳細を見る</a>
+                    </div>
+                    <div class="project-media">
+                        <img src="../elijahdash/elijah-hero.jpg" alt="Elijah Dash">
+                    </div>
                 </div>
-                <div class="project-media">
-                    <img src="../photos/festivals-thumb.png" alt="Beer and Wine Festivals">
+                
+                <div class="project-box">
+                    <div class="project-info">
+                        <h2>Product Advantage</h2>
+                        <p class="project-role">Logo Design</p>
+                        <p class="project-desc">オレゴン州を拠点とする新しい自動車詳細会社のためのロゴ作成とブランディング。グラフィックス、カレンダー、製品広告、バナー、看板など。</p>
+                        <a href="productadvantage.html" class="btn-small">詳細を見る</a>
+                    </div>
+                    <div class="project-media">
+                        <img src="../productadvantage/productadvantage-hero.png" alt="Product Advantage">
+                    </div>
                 </div>
-            </div>
 
+                <div class="project-box">
+                    <div class="project-info">
+                        <h2>Beer & Wine Festivals</h2>
+                        <p class="project-role">Logo Design</p>
+                        <p class="project-desc">地域内のビールとワインの祭りのために制作されたさまざまな広告、グラフィックス、およびロゴ。</p>
+                        <a href="festivals.html" class="btn-small">詳細を見る</a>
+                    </div>
+                    <div class="project-media">
+                        <img src="../photos/festivals-thumb.png" alt="Beer and Wine Festivals">
+                    </div>
+                </div>
+
+            </div>
         </div>
     </main>
 
@@ -213,42 +217,66 @@
             </div>
         </div>
     </footer>
-    
-<!-- Smart Sticky Header Script -->
+
+    <!-- Completely replaced with the updated, bulletproof JS logic -->
     <script>
         document.addEventListener("DOMContentLoaded", () => {
             let lastScrollTop = 0;
             const header = document.querySelector('.main-header');
             const menuToggle = document.getElementById('menu-toggle');
 
+            // 1. Sticky Header Logic
             window.addEventListener('scroll', () => {
                 if (menuToggle && menuToggle.checked) return;
 
                 let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-
-                // 1. Manage the drop shadow
+                
                 if (scrollTop > 50) {
                     header.classList.add('shadow-nav');
                 } else {
                     header.classList.remove('shadow-nav');
                 }
 
-                // 2. Manage hiding and showing
                 if (scrollTop > 200) {
                     if (scrollTop > lastScrollTop + 5) {
-                        // Scrolling DOWN -> Hide
                         header.classList.add('hide-nav');
                     } else if (scrollTop < lastScrollTop - 5) {
-                        // Scrolling UP -> Show
                         header.classList.remove('hide-nav');
                     }
                 } else {
-                    // Near the absolute top -> Always show smoothly
                     header.classList.remove('hide-nav');
                 }
-
                 lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
             }, { passive: true });
+            
+            // 2. Mobile Language Toggle Logic
+            const langBtn = document.getElementById('lang-btn');
+            const langMenu = document.getElementById('lang-menu-list');
+
+            if (langBtn && langMenu) {
+                langBtn.addEventListener('click', (e) => {
+                    e.stopPropagation(); // Stops the click from immediately triggering the document close listener
+                    langMenu.classList.toggle('show-mobile'); 
+                });
+            }
+
+            // Close the language menu if clicking anywhere else on the screen
+            document.addEventListener('click', (e) => {
+                if (langMenu && langMenu.classList.contains('show-mobile')) {
+                    if (!langBtn.contains(e.target) && !langMenu.contains(e.target)) {
+                        langMenu.classList.remove('show-mobile');
+                    }
+                }
+            });
+            
+            // Close language menu if the hamburger menu is closed
+            if (menuToggle) {
+                menuToggle.addEventListener('change', () => {
+                    if (!menuToggle.checked && langMenu) {
+                        langMenu.classList.remove('show-mobile');
+                    }
+                });
+            }
         });
     </script>
 </body>
