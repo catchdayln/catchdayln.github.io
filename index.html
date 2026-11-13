@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dayln Van Laanen | University Programs Manager</title>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;700&family=Nunito+Sans:opsz,wght@6..12,300;6..12,400;6..12,700&family=Poppins:wght@600;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css?v=21">
 </head>
 <body class="home-body">
     <header class="main-header">
@@ -25,8 +25,8 @@
             <label for="menu-toggle" class="close-menu">&times;</label>
             
             <div class="lang-dropdown">
-                <div class="nav-lang" tabindex="0">EN <span class="dropdown-arrow">&#711;</span></div>
-                <div class="lang-menu">
+                <div class="nav-lang" tabindex="0" onclick="toggleLangMenu(event)">EN <span class="dropdown-arrow">&#711;</span></div>
+                <div class="lang-menu" id="lang-menu-list">
                     <a href="index.html" class="active">English</a>
                     <a href="ja/index.html">日本語</a>
                 </div>
@@ -102,8 +102,9 @@
         </div>
     </footer>
 
-<!-- Smart Sticky Header Script -->
+    <!-- Smart Scripts -->
     <script>
+        // Smart Sticky Header Logic
         document.addEventListener("DOMContentLoaded", () => {
             let lastScrollTop = 0;
             const header = document.querySelector('.main-header');
@@ -137,6 +138,28 @@
 
                 lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
             }, { passive: true });
+        });
+        
+        // Mobile Language Toggle Logic
+        function toggleLangMenu(event) {
+            event.stopPropagation(); // Prevents click from bubbling up
+            const langMenu = document.getElementById('lang-menu-list');
+            if (langMenu.style.display === 'flex') {
+                langMenu.style.display = 'none';
+            } else {
+                langMenu.style.display = 'flex';
+                langMenu.style.flexDirection = 'column';
+                langMenu.style.alignItems = 'center';
+                langMenu.style.gap = '15px';
+            }
+        }
+
+        // Close the menu if you click anywhere else on the screen
+        document.addEventListener('click', () => {
+            const langMenu = document.getElementById('lang-menu-list');
+            if (langMenu && langMenu.style.display === 'flex') {
+                langMenu.style.display = 'none';
+            }
         });
     </script>
 </body>
