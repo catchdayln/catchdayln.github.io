@@ -104,13 +104,14 @@
     </footer>
 
     <!-- Smart Scripts -->
+<!-- Smart Scripts -->
     <script>
+        // Smart Sticky Header Logic
         document.addEventListener("DOMContentLoaded", () => {
             let lastScrollTop = 0;
             const header = document.querySelector('.main-header');
             const menuToggle = document.getElementById('menu-toggle');
 
-            // 1. Sticky Header Logic
             window.addEventListener('scroll', () => {
                 if (menuToggle && menuToggle.checked) return;
 
@@ -134,30 +135,21 @@
                 lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
             }, { passive: true });
             
-            // 2. Mobile Language Toggle Logic (Bulletproof Touch Handling)
-            const langToggleBtn = document.querySelector('.nav-lang');
-            const langMenu = document.getElementById('lang-menu-list');
+            // Bulletproof Mobile Language Toggle Logic
+            const langDropdown = document.querySelector('.lang-dropdown');
+            const navLang = document.querySelector('.nav-lang');
 
-            if (langToggleBtn && langMenu) {
-                langToggleBtn.addEventListener('click', (e) => {
-                    e.preventDefault(); // Prevents jumpy scrolling behaviors
-                    e.stopPropagation(); // Stops the click from bubbling up
-                    langMenu.classList.toggle('show-mobile'); // Triggers the CSS class
+            if (langDropdown && navLang) {
+                navLang.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    langDropdown.classList.toggle('active');
                 });
-            }
 
-            // Close the language menu if clicking anywhere else
-            document.addEventListener('click', () => {
-                if (langMenu && langMenu.classList.contains('show-mobile')) {
-                    langMenu.classList.remove('show-mobile');
-                }
-            });
-            
-            // Close language menu if the hamburger menu is closed
-            if (menuToggle) {
-                menuToggle.addEventListener('change', () => {
-                    if (!menuToggle.checked && langMenu) {
-                        langMenu.classList.remove('show-mobile');
+                // Close when clicking anywhere else
+                document.addEventListener('click', (e) => {
+                    if (!langDropdown.contains(e.target)) {
+                        langDropdown.classList.remove('active');
                     }
                 });
             }
