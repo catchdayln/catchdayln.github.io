@@ -106,12 +106,12 @@
     <!-- Smart Scripts -->
 <!-- Smart Scripts -->
     <script>
-        // Smart Sticky Header Logic
         document.addEventListener("DOMContentLoaded", () => {
             let lastScrollTop = 0;
             const header = document.querySelector('.main-header');
             const menuToggle = document.getElementById('menu-toggle');
 
+            // 1. Sticky Header Logic
             window.addEventListener('scroll', () => {
                 if (menuToggle && menuToggle.checked) return;
 
@@ -135,21 +135,31 @@
                 lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
             }, { passive: true });
             
-            // Bulletproof Mobile Language Toggle Logic
-            const langDropdown = document.querySelector('.lang-dropdown');
-            const navLang = document.querySelector('.nav-lang');
+            // 2. Mobile Language Toggle Logic
+            const langToggleBtn = document.querySelector('.nav-lang');
+            const langMenu = document.getElementById('lang-menu-list');
 
-            if (langDropdown && navLang) {
-                navLang.addEventListener('click', (e) => {
-                    e.preventDefault();
-                    e.stopPropagation();
-                    langDropdown.classList.toggle('active');
+            if (langToggleBtn && langMenu) {
+                langToggleBtn.addEventListener('click', (e) => {
+                    e.stopPropagation(); // Stops the click from immediately triggering the document close listener
+                    langMenu.classList.toggle('show-mobile'); 
                 });
+            }
 
-                // Close when clicking anywhere else
-                document.addEventListener('click', (e) => {
-                    if (!langDropdown.contains(e.target)) {
-                        langDropdown.classList.remove('active');
+            // Close the language menu if clicking anywhere else on the screen
+            document.addEventListener('click', (e) => {
+                if (langMenu && langMenu.classList.contains('show-mobile')) {
+                    if (!langMenu.contains(e.target)) {
+                        langMenu.classList.remove('show-mobile');
+                    }
+                }
+            });
+            
+            // Close language menu if the hamburger menu is closed
+            if (menuToggle) {
+                menuToggle.addEventListener('change', () => {
+                    if (!menuToggle.checked && langMenu) {
+                        langMenu.classList.remove('show-mobile');
                     }
                 });
             }
