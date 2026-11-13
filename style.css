@@ -255,8 +255,7 @@ body {
     left: 0;
     top: 0; 
     bottom: 0; 
-    /* Adjusted for the wider container to keep the overlap perfect */
-    width: calc(50vw - 280px); 
+    width: calc(50vw - 250px); 
     background-color: var(--bg-mid-grey);
     z-index: 0;
 }
