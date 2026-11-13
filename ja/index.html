@@ -133,13 +133,12 @@
                 lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
             }, { passive: true });
             
-            // 2. Mobile Language Toggle Logic
-            const langToggleBtn = document.querySelector('.nav-lang');
+            // 2. Mobile Language Toggle Logic (Button Based)
+            const langBtn = document.getElementById('lang-btn');
             const langMenu = document.getElementById('lang-menu-list');
 
-            if (langToggleBtn && langMenu) {
-                langToggleBtn.addEventListener('click', (e) => {
-                    e.stopPropagation(); // Stops the click from immediately triggering the document close listener
+            if (langBtn && langMenu) {
+                langBtn.addEventListener('click', () => {
                     langMenu.classList.toggle('show-mobile'); 
                 });
             }
@@ -147,7 +146,7 @@
             // Close the language menu if clicking anywhere else on the screen
             document.addEventListener('click', (e) => {
                 if (langMenu && langMenu.classList.contains('show-mobile')) {
-                    if (!langMenu.contains(e.target)) {
+                    if (!langBtn.contains(e.target) && !langMenu.contains(e.target)) {
                         langMenu.classList.remove('show-mobile');
                     }
                 }
