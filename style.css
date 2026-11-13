@@ -265,8 +265,7 @@ body {
     z-index: 10;
     display: flex;
     width: 100%;
-    /* Widened to 1040px to restore the 100px gap between card and text */
-    max-width: 1040px;
+    max-width: 950px;
     margin: 0 auto; 
     justify-content: space-between; 
     align-items: center; 
