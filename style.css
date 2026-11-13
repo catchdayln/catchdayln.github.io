@@ -227,11 +227,23 @@ body {
     text-align: center;
 }
 
-.lang-dropdown:hover .lang-menu,
-.lang-dropdown:focus-within .lang-menu {
-    display: flex;
+/* CSS hover isolated strictly to desktop to prevent mobile touch glitches */
+@media (min-width: 1151px) {
+    .lang-dropdown:hover .lang-menu,
+    .lang-dropdown:focus-within .lang-menu {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+
+/* New CSS class specifically for JavaScript to toggle on mobile */
+.lang-menu.show-mobile {
+    display: flex !important;
     flex-direction: column;
-    gap: 10px;
+    align-items: center;
+    gap: 15px;
+    margin-top: 10px;
 }
 
 .lang-menu a {
@@ -262,7 +274,7 @@ body {
     left: 0;
     top: 0; 
     bottom: 0; 
-    width: calc(50vw - 250px); 
+    width: calc(50vw - 280px); /* Updated Desktop Background Width */
     background-color: var(--bg-mid-grey);
     z-index: 0;
 }
@@ -272,7 +284,7 @@ body {
     z-index: 10;
     display: flex;
     width: 100%;
-    max-width: 1000px;
+    max-width: 1040px; /* Updated Desktop Gap Padding */
     margin: 0 auto; 
     justify-content: space-between; 
     align-items: center; 
@@ -1161,16 +1173,6 @@ body:not(.home-body) {
         box-shadow: none;
         background-color: transparent;
         margin-top: 10px;
-    }
-    
-    /* Safely handles mobile touch events without glitching out */
-    .lang-dropdown:hover .lang-menu,
-    .lang-dropdown:focus-within .lang-menu,
-    .lang-dropdown:active .lang-menu {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 15px; 
     }
 
     .home-body {
